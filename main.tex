@@ -28,32 +28,32 @@
 \usepackage{listings}
 
 \usepackage{color}
- 
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
- 
+
 \lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
+    backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2,
     language=sh
 }
- 
+
 \lstset{style=mystyle}
 
 %%%%%%%
@@ -89,7 +89,7 @@
 
 %% How many levels of section head would you like to appear in the
 %% Table of Contents?
-%% 0= chapter titles, 1= section titles, 2= subsection titles, 
+%% 0= chapter titles, 1= section titles, 2= subsection titles,
 %% 3= subsubsection titles.
 %%==>>
 \setcounter{tocdepth}{2}
@@ -111,8 +111,8 @@
 
 %%%%%%% Demo of section head containing sample macro:
 %% To get a macro to expand correctly in a section head, with upper and
-%% lower case math, put the definition and set the box 
-%% before \begin{document}, so that when it appears in the 
+%% lower case math, put the definition and set the box
+%% before \begin{document}, so that when it appears in the
 %% table of contents it will also work:
 
 \newcommand{\VT}[1]{\ensuremath{{V_{T#1}}}}
@@ -143,7 +143,7 @@
 %% \offprintinfo{Survey Methodology,\\ Second Edition}{Robert M. Groves}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 
+%%
 \halftitlepage
 
 %\titlepage
@@ -153,7 +153,7 @@
 \input{info/copyrightpage}
 \end{copyrightpage}
 
-\dedication{`Jika Kamu tidak dapat menahan lelahnya belajar, 
+\dedication{`Jika Kamu tidak dapat menahan lelahnya belajar,
 Maka kamu harus sanggup menahan perihnya Kebodohan.'
 ~Imam Syafi'i~}
 
@@ -208,11 +208,11 @@ Maka kamu harus sanggup menahan perihnya Kebodohan.'
 \chapter{Pengenalan Flask}
 \input{chapters/8}
 
-\chapter{PENANGANAN ERROR PROYEK}
+\chapter{HTTP GET METHOD REQUEST}
 \input{chapters/10}
 
 
-\bibliographystyle{IEEEtran} 
+\bibliographystyle{IEEEtran}
 %\def\bibfont{\normalsize}
 \bibliography{references}
 
@@ -223,50 +223,50 @@ Maka kamu harus sanggup menahan perihnya Kebodohan.'
 \printindex
 
 %%%% Making an index
-%% 
+%%
 %% 1. Make index entries, don't leave any spaces so that they
 %% will be sorted correctly.
-%% 
+%%
 %% \index{term}
 %% \index{term!subterm}
 %% \index{term!subterm!subsubterm}
-%% 
+%%
 %% 2. Run LaTeX several times to produce <filename>.idx
-%% 
+%%
 %% 3. On command line, type  makeindx <filename> which
-%% will produce <filename>.ind 
-%% 
+%% will produce <filename>.ind
+%%
 %% 4. Type \printindex to make the index appear in your book.
-%% 
-%% 5. If you would like to edit <filename>.ind 
+%%
+%% 5. If you would like to edit <filename>.ind
 %% you may do so. See docs.pdf for more information.
-%% 
+%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%% Making Multiple Indices %%%%%%%%%%%%%%%%
-%% 1. 
+%% 1.
 %% \usepackage{multind}
 %% \makeindex{book}
 %% \makeindex{authors}
 %% \begin{document}
-%% 
+%%
 %% 2.
 %% % add index terms to your book, ie,
 %% \index{book}{A term to go to the topic index}
 %% \index{authors}{Put this author in the author index}
-%% 
+%%
 %% \index{book}{Cows}
 %% \index{book}{Cows!Jersey}
 %% \index{book}{Cows!Jersey!Brown}
-%% 
+%%
 %% \index{author}{Douglas Adams}
 %% \index{author}{Boethius}
 %% \index{author}{Mark Twain}
-%% 
-%% 3. On command line type 
-%% makeindex topic 
+%%
+%% 3. On command line type
+%% makeindex topic
 %% makeindex authors
-%% 
+%%
 %% 4.
 %% this is a Wiley command to make the indices print:
 %% \multiprintindex{book}{Topic index}
