@@ -74,8 +74,7 @@ Python adalah Flask, yang merupakan kerangka kerja mikro untuk Python berdasarka
 Flask sendiri dapat dikatakan sebagai \textit{web framework} yang fleksibel terhadap library apapun untuk Python. Selain itu dokumentasinya yang jelas membuat Flask sangat diminati oleh kawula muda.
 
 Kelebihan:
-
-\begin{itemize}
+\begin{enumerate}
 	\item \textit{Framework} yang mudah untuk digunakan dan dipahami.
 	\item Berisi pengembangan server dan \textit{debugger}.
 	\item \textit{RESTfull request dispatching}.
@@ -85,15 +84,15 @@ Kelebihan:
 	\item Berbasis \textit{Unicode} yaitu suatu standar yang dirancang untuk mengizinkan \textit{text} dan \textit{symbol} dari semua tulisan untuk menampilkan dan dimanipulasi secara konsisten oleh komputer.
 	\item Dokumentasi yang ekstensif.
 	\item Kompatibilitas \textit{Google App Engine}.
-\end{itemize}
+\end{enumerate}
 
 Kekurangan:
-\begin{itemize}
+\begin{enumerate}
 \item Fungsionalitas
-\end{itemize}
+\end{enumerate}
 
 Beberapa fitur Flask yang perlu kamu ketahui antara lain:
-\begin{itemize}
+\begin{enumerate}
 	\item \textit{Built-in development server} dan \textit{debugger}.
 	\item Terintegrasi dengan unit \textit{testing}.
 	\item RESTful.
@@ -103,7 +102,34 @@ Beberapa fitur Flask yang perlu kamu ketahui antara lain:
 	\item \textit{Unicode based}.
 	\item Dokumentasi yang baik.
 	\item Komunitas yang kuat.
-\end{itemize}
+\end{enumerate}
+
+\subsection{Tornado}
+
+Tornado adalah salah satu kerangka kerja web terbaik dari bahasa pemrograman Python. Kerangka kerja ini memungkinkan pendekatan yang lebih bersih untuk pemrograman server Web dan memiliki fokus yang tajam pada operasi non-pemblokiran, dapat meningkatkan skala ke sejumlah besar koneksi terbuka \cite{panjaitan2018sistem}.
+
+Kelebihan:
+\begin{enumerate}
+\item Dukungan bawaan
+
+Tornado hadir dengan dukungan bawaan dan menemukan solusi untuk sebagian besar aspek pengembangan Web yang membosankan seperti templat, pelokalan, cookie yang ditandatangani, dll. Tornado juga memungkinkan pengguna untuk mencampurnya dengan kerangka kerja lain, dengan cuplikan yang sesuai, sesuai untuk kebutuhan mereka.
+
+\item Koneksi serentak
+
+Tornado menawarkan layanan waktu nyata dan mendukung sejumlah besar koneksi konkuren, streaming HTTP (protokol komunikasi yang diterapkan oleh Apple Inc) dan polling panjang (ini adalah teknologi 'sembur', yang memungkinkan mekanisme pendorong emulatif dalam keadaan di yang dorongan nyata tidak mungkin). Dengan Tornado, sangat mudah untuk menulis layanan waktu nyata. FriendFeed memelihara koneksi terbuka, terutama untuk penggunanya yang sering terlibat.
+
+\item Kinerja tinggi.
+
+Ini adalah fitur paling menarik dari Tornado. Ini sangat cepat dibandingkan dengan semua kerangka kerja Python Web lainnya. Mempertimbangkan keluaran dasarnya, kecepatannya sekitar empat kali lebih tinggi dan juga cukup efisien.
+\end{enumerate}
+
+Tornado memiliki beberapa modul utama seperti:
+\begin{enumerate}
+\item \textit{Web framework}.
+\item \textit{HTTP Server and Client}.
+\item \textit{Asynchronous Networking, Coroutines and Concurrency}.
+\item \textit{Utilities}.
+\end{enumerate}
 
 \section{Instalasi dan Hello World di Flask}
 
