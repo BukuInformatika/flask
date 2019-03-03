@@ -131,6 +131,35 @@ Tornado memiliki beberapa modul utama seperti:
 \item \textit{Utilities}.
 \end{enumerate}
 
+\subsection{Falcon}
+
+Falcon merupakan pustaka WSGI yang membantu membangun API web dengan kecepatan lebih cepat. Saat Anda membuat kerangka HTTP API selain Falcon dapat memuat banyak dependensi dan abstraksi yang tidak diperlukan. Falcon, di sisi lain, mengurangi semua ketergantungan dan menyediakan pengembang untuk mengembangkan desain yang lebih bersih yang memungkinkan gaya arsitektur HTTP dan REST [5].
+
+Falcon mengklaim bahwa ia dapat menangani lebih banyak permintaan dengan perangkat keras yang sama jika sedang ditangani oleh kerangka kerja lain. Kerangka kerja ini bertujuan untuk memiliki cakupan kode 100\%, sehingga membuatnya lebih andal. Sebagian besar fitur di atas dimungkinkan karena Falcon hanya mempertahankan 2 dependensi pihak ketiga seperti enam, mimeparse. Sesuai dengan halaman Falith Github perusahaan seperti RackSpace, OpenStack dan LinkedIn menggunakan Falcon.
+
+Dengan tagline \textit{The Minimalist Python WSGI Framework}, Falcon siap menyuguhkan berbagai fitur yang dapat mempermudah kamu membangun sebuah RESTful API. Falcon merupakan \textit{high performance web framework} yang dapat digunakan untuk membangun HTTP API dan backend apps. %Pengembangan Falcon dimonitor oleh Rackspace. 
+
+Kelebihan:
+\begin{enumerate}
+\item Cepat
+
+Salah satu persyaratan paling penting dari cloud API adalah mereka harus menanggapi permintaan secepat mungkin. Ini menjadi fitur penting dalam skenario real-time ketika jumlah permintaan bersamaan tinggi. Falcon adalah salah satu kerangka kerja tercepat yang tersedia.
+
+\item Cahaya
+
+Kerangka kerja dengan jejak ketergantungan yang lama menjadi sangat sulit untuk disatukan dalam berbagai lingkungan karena pembatasan yang diberlakukan oleh ketergantungan tersebut. Falcon hanya memiliki dua dependensi: enam (pustaka kompatibilitas Python 2 dan 3, yang memfasilitasi basis kode untuk bekerja pada Python 2 dan 3 tanpa memerlukan perubahan apa pun) dan mimeparse (yang menyediakan fungsi seperti parsing nama tipe-mime). Ini membuat Falcon lebih mudah untuk diuji dan digunakan.
+
+\item Fleksibel
+
+Falcon tidak membatasi pengembang ketika memilih perpustakaan sehubungan dengan database, otorisasi, dll. Pengembang dapat memilih perpustakaan yang mereka sukai, yang cocok dengan persyaratan skenario proyek saat ini.
+\end{enumerate}
+
+Kekurangan:
+\begin{enumerate}
+\item Tidak cocok untuk melayani halaman HTML.
+\item Belum tentu lebih cepat daripada Flask.
+\end{enumerate}
+
 \subsection{Hug}
 
 Hug adalah kerangka kerja berbasis web Python yang lain memberi para pengembang fleksibilitas mengembangkan API dan memungkinkan dapat mengkonsumsinya sesuka mereka. Pengembangan API telah disederhanakan secara drastis melalui beberapa antarmuka. Biarlah itu pengembangan lokal atau melalui HTTP atau bahkan melalui antarmuka baris perintah (CLI), sejauh ini merupakan cara modern tercepat untuk mengembangkan API. Kerangka kerja Hug telah dibangun dengan fokus tunggal pada kinerja dalam pikiran. Dikatakan mengkonsumsi sumber daya hanya bila diperlukan dan selanjutnya dikompilasi menggunakan Cython untuk mencapai angka-angka luar biasa pada kinerja. Dengan semua alasan yang jelas ini, Hug mencuri mahkota sebagai kerangka kerja web tercepat untuk Python 3.
@@ -168,7 +197,7 @@ Mulai dengan tutorial dalam menginstall Python 2.7. Python ini digunakan untuk \
 \item Setelah mengetikkan perintah tersebut, silahkan tekan \textit{enter} maka prosesnya akan berjalan. Silahkan tunggu hasilnya. Hasilnya akan nampak seperti gambar \ref{fig:cek_python}.
 \begin{figure}[!htbp]
 	\centerline{\includegraphics[width=1\textwidth]{figures/8/cek_python.jpg}}
-	\caption{Froses Instalasi Flask}
+	\caption{Proses Instalasi Flask}
 	\label{fig:cek_python}
 \end{figure}
 
