@@ -179,6 +179,44 @@ Kekurangan:
 \item Hanya dapat memuat kode sedikit.
 \end{enumerate}
 
+\subsection{Sanic}
+
+Sanic adalah kerangka kerja web Python \(cocok untuk Python 3.5\) yang dibangun di atas \textit{uvloop} dan dirancang untuk respons HTTP yang lebih cepat melalui penanganan permintaan yang tidak sinkron. Karena struktur internal dan ketergantungannya yang kuat pada uvloop, itu tidak dapat dikembangkan atau digunakan pada lingkungan Windows. Sampai saat ini, Sanic masih dalam tahap pengembangan dan dianggap sebagai bayi di antara kerangka web lain yang tersedia untuk Python. Dengan ini, ada sejumlah kode yang telah ditulis di sekitar Sanic agar Anda dapat menggunakannya untuk keperluan bisnis yang kompleks. Mengingat masih dalam pengembangan, tidak ada banyak aplikasi atau ekstensi untuk Sanic dibandingkan dengan Flask atau Django. Mengingat semua itu, kerangka kerja ini memungkinkan Anda untuk mengambil keuntungan dari sintaks async atau menunggu untuk mendefinisikan fungsi asinkron Anda sendiri. Ini memberikan kekuatan menulis aplikasi asinkron seperti apa yang dapat dicapai dengan menggunakan Node.js.
+
+Kelebihan:
+\begin{enumerate}
+\item Server yang dikonfigurasikan untuk harus dilampirkan ke aplikasi yang ada.
+\item Aplikasi Sanic dapat menentukan rute reguler yang akan hidup berdampingan dengan server Engine.IO. Pola khas adalah menambahkan rute yang melayani aplikasi klien dan file statis terkait dengan aplikasi ini.
+\end{enumerate}
+
+Kekurangan:
+\begin{itemize}
+\item Tidak memiliki banyak aplikasi atau ekstensi.
+\end{itemize}
+
+\subsection{Aiohttp}
+
+Kerangka kerja asinkron yang sangat bergantung pada dan menggunakan fitur Python 3.5+ seperti async dan menunggu. Kerangka kerja ini tidak hanya kerangka kerja server web tetapi juga bertindak sebagai kerangka kerja klien juga, karena mendukung baik WebSocket Server dan Klien. Ini adalah kerangka kerja terkenal yang memanfaatkan perpustakaan asinkron populer - asyncio yang ada di sana sejak awal perpustakaan. aiohttp seperti Flask menyediakan objek permintaan dan router untuk memungkinkan pengalihan permintaan ke fungsi yang dikembangkan untuk menanganinya. Sebagai pengembang layanan-mikro, Anda bisa fokus membangun pandangan seperti yang akan Anda lakukan dengan Flask.
+
+Kelebihan:
+\begin{enumerate}
+\item Efisiensi.
+
+Menangani jumlah permintaan yang setara dengan server yang lebih sedikit atau lebih kecil dibandingkan dengan sinkronisasi. Skalabilitas dibatasi oleh jumlah koneksi soket terbuka dalam proses tunggal vs. jumlah utas\/proses bersamaan untuk sinkronisasi kerangka kerja web (ribuan hingga puluhan ribu untuk async vs. puluhan hingga ratusan untuk sinkronisasi). Server kecil (dalam hal CPU dan memori) menjalankan web async layanan dalam satu proses akan cocok dan seringkali mengungguli yang lebih besar server menjalankan layanan web sinkronisasi menggunakan puluhan hingga ratusan utas/proses.
+
+\item Mampu menangani sejumlah besar permintaan bersamaan.
+
+Mengizinkan fungsionalitas \textit{push} yang efisien melalui soket web, EventSource, atau koneksi berumur panjang lainnya
+\end{enumerate}
+
+Kekurangan:
+\begin{itemize}
+\item Tunggal.
+
+Memiliki model yang lebih kompleks untuk dipikirkan status bersama dan bagaimana hal itu dapat berubah dari satu proses sinkronisasi, harus diingat bahwa status bersama dapat berubah di antara saat-saat menghasilkan kontrol ke loop acara dan mengembalikan kontrol ke kode Anda.
+\end{itemize}
+
+
 \section{Instalasi dan Hello World di Flask}
 
 \subsection{Instalasi Python 2.7.}
