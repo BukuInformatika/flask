@@ -216,6 +216,58 @@ Kekurangan:
 Memiliki model yang lebih kompleks untuk dipikirkan status bersama dan bagaimana hal itu dapat berubah dari satu proses sinkronisasi, harus diingat bahwa status bersama dapat berubah di antara saat-saat menghasilkan kontrol ke loop acara dan mengembalikan kontrol ke kode Anda.
 \end{itemize}
 
+\subsection{Piramid}
+
+Kerangka kerja yang telah dikembangkan atau dibangun untuk aplikasi yang lebih besar. Piramida, nama itu sendiri menunjukkan bahwa itu fleksibel, tidak seperti Django yang menawarkan pendekatan "semuanya di dalam kotak". Aplikasi web dibangun menggunakan Pyramid, mulai dari modul file tunggal dan kemudian proyek-proyek ini berkembang menjadi proyek yang lebih besar dan ambisius dalam waktu singkat. Kerugian dari kerangka kerja web ini adalah dokumentasi mereka sendiri, yang tidak terlalu jelas dan terkadang membingungkan. Chameleon Pyramid dipasang untuk menggunakan templat Chameleon alih-alih templat Jinja. Dibutuhkan beberapa waktu dalam mengembangkan aplikasi file tunggal dengan Pyramid, tetapi kemudian, ini dapat ditingkatkan lebih cepat karena pengaturan awal lebih keras dan rawan kesalahan.
+
+Kelebihan:
+\begin{enumerate}
+\item Fleksibilitas.
+
+Sistem rendering template, cara menyambungkan ke database, cara memetakan url ke tampilan , semacam sistem otentikasi, dan banyak hal lainnya. Piramida sangat bagus karena semua komponen ini dapat ditukar. Anda dapat memilih mesin rendering template, memiliki dua cara berbeda untuk memetakan url ke tampilan dan dapat menggunakannya keduanya di aplikasi yang sama, dapat menggunakan metode apa pun yang ingin disambungkan ke database (meskipun SQLAlchemy umumnya digunakan), dan bahkan dapat terhubung ke beberapa database dari tipe yang sangat berbeda.
+
+\item Kemudahan AJAX.
+
+Penggunaan dekorator dan tampilan XHR membuatnya sangat mudah untuk mendapatkan permintaan AJAX untuk pergi ke tempat yang Anda inginkan. Menjelaskan XHR, dekorator, atau AJAX jauh di luar cakupan tutorial ini, tetapi saya jamin penjelasannya ada di luar sana.
+
+\item Dukungan SQLAlchemy
+
+SQLAlchemy adalah hal yang sangat kuat, banyak orang yang sangat pintar berpikir itu adalah ORM terbaik di sekitar. Jika Anda memilih Django Anda memilih untuk tidak menggunakan SQLAlchemy. Itu hanya masalah besar jika aplikasi Anda sangat (SQL) database intensif - jika Anda ingin melakukan pertanyaan rumit dengan cara yang waras. Di sisi lain, jika aplikasi Anda sederhana maka SQLAlchemy tidak akan banyak membantu, tetapi tidak ada salahnya untuk memilikinya.
+\end{enumerate}
+
+Kekurangan:
+\begin{enumerate}
+\item Fungsionalitas
+\end{enumerate}
+
+Beberapa fitur Pyramid:
+\begin{enumerate}
+\item Kompatibel dengan berbagai template engine seperti Jinja2, Chameleon, dan Mako.
+\item Mempunyai sistem form yang handal.
+\item Menggunakan SQL Alchemy untuk teknologi database.
+\item Memiliki bootstraper.
+\item Function decorator.
+\item Asset management.
+\item Event dan subcriber
+\end{enumerate}
+
+\subsection{Web2py}
+
+Merupakan salah satu \textit{full-stack enterprise framework} yang \textit{free} dan \textit{open source} untuk membangun aplikasi web berbasis \textit{database} yang aman. %Web2Py merupakan salah satu \textit{web framework} yang masih ada hingga hari ini. Tidak hanya soal \textit{url routing}, Web2Py pun memiliki \textit{template engine} yang cukup \textit{powerful} untuk membuat halaman web. Hingga saat ini Web2py dikelola oleh 129 kontributor di Github. 
+
+Beberapa fitur yang dimiliki oleh Web2py antara lain:
+\begin{enumerate}
+\item Dibuat oleh komunitas terpercaya.
+\item Selalu backward compatible.
+\item Mudah digunakan.
+\item Dapat berjalan di banyak sistem operasi.
+\item Dapat berjalan di banyak web server.
+\item Dapat "berbicara" ke SQLite3, PostgreSQL, MySQL, MSSQL, FireBird, Oracle, IBM DB2, Informix, Ingres, dan Google App Engine.
+\item Aman dari cross site scripting, injection flaws, dan eksekusi file berbahaya.
+\item Mengajarkan penggunanya apa arti MVC yang sesungguhnya.
+\item Kompatibel dengan berbagai protokol seperti REST, RSS, HTML, REST, XML-RPC, dan lainnya.
+\item Dukungan berbagai modul dan library yang sudah disediakan oleh Web2py
+\end{enumerate}
 
 \section{Instalasi dan Hello World di Flask}
 
