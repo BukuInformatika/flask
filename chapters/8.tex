@@ -253,7 +253,7 @@ Beberapa fitur Pyramid:
 
 \subsection{Web2py}
 
-Merupakan salah satu \textit{full-stack enterprise framework} yang \textit{free} dan \textit{open source} untuk membangun aplikasi web berbasis \textit{database} yang aman. %Web2Py merupakan salah satu \textit{web framework} yang masih ada hingga hari ini. Tidak hanya soal \textit{url routing}, Web2Py pun memiliki \textit{template engine} yang cukup \textit{powerful} untuk membuat halaman web. Hingga saat ini Web2py dikelola oleh 129 kontributor di Github. 
+Merupakan salah satu \textit{full-stack enterprise framework} yang \textit{free} dan \textit{open source} untuk membangun aplikasi web berbasis \textit{database} yang aman. Web2Py merupakan salah satu \textit{web framework} yang masih ada hingga hari ini. %Tidak hanya soal \textit{url routing}, Web2Py pun memiliki \textit{template engine} yang cukup \textit{powerful} untuk membuat halaman web. Hingga saat ini Web2py dikelola oleh 129 kontributor di Github. 
 
 Beberapa fitur yang dimiliki oleh Web2py antara lain:
 \begin{enumerate}
@@ -318,24 +318,81 @@ CherryPy memiliki dukungan seperti berikut:
 
 \subsection{Instalasi Python 2.7.}
 
-Mulai dengan tutorial dalam menginstall Python 2.7. Python ini digunakan untuk \textit{code} pembaca data dari sinyal gelombang otak yang telah dihasilkan oleh alat EEG yaitu NeuroSky Mindwave. Baiklah langsung kita mulai saja:
+Mulai dengan tutorial dalam menginstall Python 2.7. Python ini digunakan untuk code pembaca data dari sinyal gelombang otak yang telah dihasilkan oleh alat EEG yaitu NeuroSky Mindwave. Baiklah langsung kita mulai saja:
 \begin{enumerate}
-\item Pertama-tama silahkan download software dari python versi 2 di laptop anda. Download python versi 2.7.15 dari situs web resminya yaitu https://www.python.org/. Silahkan sesuaikan dengan kapasitas laptop anda, bisa yang win 32 atau yang win 64 (32 bit / 64 bit). Contoh downloadnya seperti pada gambar \ref{fig:python}.
+\item Pertama-tama silahkan download software dari python versi 2 di laptop anda. Download python versi 2.7.15 dari situs web resminya yaitu https://www.python.org/. Silahkan sesuaikan dengan kapasitas laptop anda, bisa yang win 32 atau yang win 64 ( 32 bit / 64 bit ). Contoh downloadnya seperti pada gambar \ref{fig:python}.
 \begin{figure}[!htbp]
 	\centerline{\includegraphics[width=1\textwidth]{figures/8/python.jpg}}
 	\caption{Download Softfile Python 2.7.}
 	\label{fig:python}
 \end{figure}
 
-\item Setelah di \textit{download}  silahkan  buka  Command  Prompt  di komputer/PC anda.
-\item Kemudian silahkan ketikkan perintah \verb|pip install flask|.
-\item Setelah mengetikkan perintah tersebut, silahkan tekan \textit{enter} maka prosesnya akan berjalan. Silahkan tunggu hasilnya. Hasilnya akan nampak seperti gambar \ref{fig:cek_python}.
+\item Setelah berhasil mendownload mentahan pythonnya silahkan lakukan instalasi seperti biasa anda lakukan. Setelah selesai instalasi pythonnya silahkan check di Command Prompt, apakah Pythonnya telah terbaca / running disesuaikan dengan laptop anda atau belum. Contoh pengecekan di Command Prompt seperti pada gambar \ref{fig:cek_python27}
 \begin{figure}[!htbp]
-	\centerline{\includegraphics[width=1\textwidth]{figures/8/cek_python.jpg}}
-	\caption{Proses Instalasi Flask}
-	\label{fig:cek_python}
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/cek_python27.jpg}}
+	\caption{Pengecekan Python 2.7.}
+	\label{fig:cek_python27}
 \end{figure}
 
+\item Apabila tampilannya telah sesuai dengan gambar \ref{fig:cek_python27}, maka python anda siap digunakan.
+\item Pastikan python yang terbaca versi 2.7.15 atau bahkan belum ada sama sekali silahkan lakukan konfigurasi ini:
+\begin{itemize}
+\item Silahkan buka Control Panel anda.
+\item Pilih System and Security.
+\item Kemudian pilih lagi system.
+\item Lalu  di  bagian  kiri  tampilan  ada  sub menu  Advanced  system setting.
+\item Pada  sub  menu  tersebut  silahkan  pilih  button  Environment Variabel.
+\item Silahkan ganti path dengan \verb|C:\Python27| dan \verb|C:\Python27\Scripts| ( Lokasi anda menyimpan mentahan python yang telah anda install tadi ).
+\item Maka tampilannya akan seperti pada gambar \ref{fig:editenv}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/editenv.jpg}}
+	\caption{Pengubahan Environment Python 2.7.}
+	\label{fig:editenv}
+\end{figure}
+
+\item Jangan lupa untuk memasukkan script dari pythonnya sehingga benar-benar bisa terbaca untuk pipnya. Silahkan klik button ok sampai selesai.
+\item Setelah itu, lakukan pengecekan ulang di Command Prompt maka hasilnya akan berubah menjadi versi 2.7.15.
+\end{itemize}
+\end{enumerate}
+
+\subsection{Instalasi Python 3.6}
+
+Selanjutnya kita mulai dengan tutorial dalam menginstall Python 3.6. Python ini digunakan untuk code pengolahan data csv ke dalam flask python.
+\begin{enumerate}
+\item Pertama-tama silahkan download software dari python versi 3 di laptop anda. Download python versi 3.6.3 dari situs web resminya yaitu https://www.python.org/. Silahkan sesuaikan dengan kapasitas laptop anda, bisa yang win 32 atau yang win 64 ( 32 bit / 64 bit ). Contoh downloadnya seperti seperti pada gambar \ref{fig:python36}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/python36.jpg}}
+	\caption{Download Softfile Python 3.6.}
+	\label{fig:python36}
+\end{figure}
+ 
+\item Setelah berhasil mendownload mentahan pythonnya silahkan lakukan instalasi seperti biasa anda lakukan. Setelah selesai instalasi pythonnya silahkan check di Command Prompt, apakah Pythonnya telah terbaca / running disesuaikan dengan laptop anda atau belum. Contoh pengecekan di Command Prompt seperti pada gambar \ref{fig:cek_python36}
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/cek_python36.jpg}}
+	\caption{Pengecekan Python 3.6.}
+	\label{fig:cek_python36}
+\end{figure}
+
+\item Apabila tampilannya telah sesuai dengan contoh diatas, maka python anda siap digunakan.
+\item Pastikan python yang terbaca versi 3.6.3 atau bahkan belum ada sama sekali silahkan lakukan konfigurasi ini:
+\begin{itemize}
+\item Silahkan buka Control Panel anda.
+\item Pilih System and Security.
+\item Kemudian pilih lagi system.
+\item Lalu  di  bagian  kiri  tampilan  ada  sub menu  Advanced  system setting.
+\item Pada  sub  menu  tersebut  silahkan  pilih  button  Environment Variabel.
+\item Silahkan ganti path dengan \verb|C:\Python27| dan \verb|C:\Python27\Scripts| ( Lokasi anda menyimpan mentahan python yang telah anda install tadi).
+\item Maka tampilannya akan seperti pada gambar \ref{fig:editenv36}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/editenv36.jpg}}
+	\caption{Pengubahan Environment Python 3.6.}
+	\label{fig:editenv36}
+\end{figure}
+
+\item Jangan lupa untuk memasukkan script dari pythonnya sehingga benar-benar bisa terbaca untuk pipnya. Silahkan klik button ok sampai selesai.
+\item Setelah itu, lakukan pengecekan ulang di Command Prompt maka hasilnya akan berubah menjadi versi 3.6.3
+\item Setelah semua tahap di atas selesai, maka silahkan lanjutkan ke tahap berikutnya.
+\end{itemize}
 \end{enumerate}
 
 Perintah python flask. Contoh \textit{source code} seperti pada listing \ref{lst:hello}.
