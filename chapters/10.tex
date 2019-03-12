@@ -1,14 +1,10 @@
 \section{HTTP Method Request}
-
 \subsection{Pengertian HTTP Method Request}
-
 Protokol HTTP adalah protokol permintaan atau respon. Klien mengirimkan permintaan keserver dalam bentuk metode permintaan, URL, dan versi protokol, diikuti oleh pesan seperti MIME yang berisi perubahan permintaa, informasi klien, dan kemungkinan onten tubuh melalui koneksi dengan server\cite{wyler2005aggressive}. Protokol ini sangat ringan serta generik dan tidak berstatus sehingga dapat dipergunakan oleh tipe dokumen apa saja. Method adalah sekumpulan kode yang diberi namma, untuk merujuk kesekumpulan kode yang ada kemuadian digunakan sebuah nama yang disebut dengan nama method. Method sendiri mempunyai parameter sebagai input (masukan) dan nilai kembalian sebagai output (keluaran). Request adalah permiintaan dimana fungsi ini digunakan sebagai istilah ataupun kinerja dalam pengembalian nilai dari masukan yang dieksekusi.
 
 Berdasarkan beberapa penjelasann diatas, maka untuk pengertian dari HTTP Method Request sendiri merupakan seperangkat metode permintan untuk menunjukkan tindakan yang diinginkan yang akan dilakukan untuk sumber daya tertentu. Meskipun mereka juga bisa menjadi kata benda, metode permintaan ini kadang-kadang disebut sebagai verba HTTP. Masing-masing menerapkan semantik yang berbeda, namun beberapa fitur umum digunakan bersama oleh mereka adalah misalnya Metode pertmintaan dapat berupa safe, idempotent, atau cacheable.
 
-\subsection{Jenis-Jenis HTTP Method Request}
-
-Berikut ini adalah jenis-jenis HTTP Method Request beserta penjelasan singkatnya.
+\subsection{Jenis-jenis HTTP Method Request}
 \begin{enumerate}
   \item GET : akan dijelaskan pada point berikutnya.
   \item HEAD : Metode HEAD meminta tanggapan yang identik dengan permintaan GET, namun tanpa respon body.
@@ -65,12 +61,9 @@ fragment & \begin{tabular}[c]{@{}l@{}}Nama dari bagian tertentu pada \\ data (mi
 \label{table:schema}
 \end{table}
 
-\section{Mekanisme HTTP Method Request}
-
-\subsection{Mekanisme/Alur kerja HTTP Get Method}
-
+\section {Mekanisme HTTP Method Request}
+\subsection{Mekanisme / Alur kerja HTTP Get Method}
 Mekanisme adalah suatu rangkaian kerja sebuah alat yang digunakan dalam menyelesaikan sebuah masalah yang berkaitan dengan proses kerja, tujuannya untuk menghasilkan hasil yang mekasimal serta mengurangi datangnya atau munculnya kegagalan. untuk mekanisme HTTP Get Method sendiri dapat diperhatikan sebagai berikut :
-
 \begin{enumerate}
   \item Silahkan membuat dan membangun sebuah URL API.
   \item Didalam URL API (endpoint) tersebut kita akan menggunakan fungsi Method Get.
@@ -80,42 +73,58 @@ Mekanisme adalah suatu rangkaian kerja sebuah alat yang digunakan dalam menyeles
   \item Untuk tutorial pembangunan endpoint seperrti pada point kedua akan dijelaskan pada point selanjutnya.
 \end{enumerate}
 
-\section{Contoh URL HTTP Get Method}
-
+\section {Contoh URL HTTP Get Method}
 Untuk pemberian contoh ini akan dibarengin dengan tutorial pembangunannya, jadi diharapkan teman-teman dapat dengan mudah memahami dan mudah dalam mengikuti contoh yang diberikan. Berikut tutorialnya :
-
 \begin{enumerate}
   \item Endpoint adalah perangkat komputasi jarak jauh yang berkomunikasi bolak-balik dengan jaringan yang terhubung dengannya. Fungsi-fungsi yang dipergunakan yaitu sebagai contoh berikut :
       \begin{itemize}
-        \item Fungsi 1 : Load_Data.py yaitu membaca file CSV.
+        \item Fungsi 1 : LoadData.py yaitu membaca file CSV.
             \lstinputlisting[caption=Contoh kode untuk membaca file CSV,label={lst:LoadData}]{src/10/LoadData.py}
-        \item Fungsi 2 : Get_all_data.py yaitu untuk menampilkan semua data dari file CSV.
+        \item Fungsi 2 : Getalldata.py yaitu untuk menampilkan semua data dari file CSV.
             \lstinputlisting[caption=Contoh kode untuk menampilkan semua data dari file CSV,label={lst:GetAllData}]{src/10/GetAllData.py}
-        \item Fungsi 3 : Get_column.py yaitu untuk menampilkan data dari kolom tertentu.
-            \lstinputlisting[caption=Contoh kode untuk menampilkan data dari kolom,label={lst:Get_column}]{src/10/Get_column.py}
-        \item Fungsi 4 : Get_topfive.py yaitu untuk menampilkan 5 data teratas dan terbawah.
-            \lstinputlisting[caption=Contoh kode untuk menampilkan 5 data teratas dan terbawah,label={lst:Get_topfive}]{src/10/Get_topfive.py}
+        \item Fungsi 3 : Getcolumn.py yaitu untuk menampilkan data dari kolom tertentu.
+            \lstinputlisting[caption=Contoh kode untuk menampilkan data dari kolom,label={lst:Getcolumn}]{src/10/Getcolumn.py}
+        \item Fungsi 4 : Gettopfive.py yaitu untuk menampilkan 5 data teratas dan terbawah.
+            \lstinputlisting[caption=Contoh kode untuk menampilkan 5 data teratas dan terbawah,label={lst:Gettopfive}]{src/10/Gettopfive.py}
         \item Fungsi 5 : Sorting.py yaitu untuk mengurutkan data dari yang terbesar ke yang terkecil dan sebaliknya.
             \lstinputlisting[caption=Contoh kode untuk mengurutkan data,label={lst:Sorting}]{src/10/Sorting.py}
-        \item Fungsi 6 : Convert_json.py yaitu untuk mengganti data kedalam format Json.
-            \lstinputlisting[caption=Contoh kode untuk mengganti data,label={lst:Convert_json}]{src/10/Convert_json.py}
-        \item Fungsi 7 : Delete_column.py yaitu untuk menghapus kolom tertentu.
-            \lstinputlisting[caption=Contoh kode untuk menghampus kolom tertentu,label={lst:Delete_column}]{src/10/Delete_column.py}
-        \item Fungsi 8 : Delete_all_data.py yaitu untuk Menghapus semua data pada file CSV.
-            \lstinputlisting[caption=Contoh kode untuk menghapus semua data,label={lst:Delete_all_data}]{src/10/Delete_all_data.py}
-        \item Fungsi 9 : Insert_data.py yaitu untuk menambahkan data.
-        \item Fungsi 10 : Get_info.py yaitu untuk Menampilkan data csv namun dengan format json bawaan dari library pandas yang akan berupa deskripsi.
-        \item Fungsi 11 : Get_row.py yaitu untuk Menampilkan seluruh jumlah baris.
-        \item Fungsi 12 : Get_row_field.py yaitu untuk Menampilkan data perbaris sesuai dengan kolom yang diiginkan.
-        \item Fungsi 13 : Update_data.py yaitu untuk Mengubah data berdasarkan index id.
-        \item Fungsi 14 : Delete_data.py yaitu untuk (Menghapus data berdasarkan index id.
-        \item Fungsi 15 : Get_row_json.py yaitu untuk Mengubah data menjadi Json.
-        \item Fungsi 16 : Get_all_data_json.py yaitu untuk Menampilkan seluruh data dalam bentuk format Json.
-        \item Fungsi 17 : Amount_data.py yaitu untuk Menghitung jumlah data secara keseluruhan dari kolom dan baris.
-        \item Fungsi 18 : Get_column_count.py yaitu untuk Menghitung jumlah kolom pada file.
-        \item Fungsi 19 : Get_row_count.py yaitu untuk Menghitung jumlah baris pada file.
-        \item Fungsi 20 : Reload_data.py yaitu untuk Mengembalikan nilai data.
+        \item Fungsi 6 : Convertjson.py yaitu untuk mengganti data kedalam format Json.
+            \lstinputlisting[caption=Contoh kode untuk mengganti data,label={lst:Convertjson}]{src/10/Convertjson.py}
+        \item Fungsi 7 : Deletecolumn.py yaitu untuk menghapus kolom tertentu.
+            \lstinputlisting[caption=Contoh kode untuk menghampus kolom tertentu,label={lst:Deletecolumn}]{src/10/Deletecolumn.py}
+        \item Fungsi 8 : Deletealldata.py yaitu untuk Menghapus semua data pada file CSV.
+            \lstinputlisting[caption=Contoh kode untuk menghapus semua data,label={lst:Deletealldata}]{src/10/Deletealldata.py}
+        \item Fungsi 9 : Insertdata.py yaitu untuk menambahkan data.
+            \lstinputlisting[caption=Contoh kode untuk menambah data,label={lst:Insertdata}]{src/10/Insertdata.py}
+        \item Fungsi 10 : Getinfo.py yaitu untuk Menampilkan data csv namun dengan format json bawaan dari library pandas yang akan berupa deskripsi.
+            \lstinputlisting[caption=Contoh kode untuk Menampilkan data csv,label={lst:Getinfo}]{src/10/Getinfo.py}
+        \item Fungsi 11 : Getrow.py yaitu untuk Menampilkan seluruh jumlah baris.
+            \lstinputlisting[caption=Contoh kode untuk Menampilkan seluruh jumlah baris,label={lst:Getrow}]{src/10/Getrow.py}
+        \item Fungsi 12 : Getrowfield.py yaitu untuk Menampilkan data perbaris sesuai dengan kolom yang diiginkan.
+            \lstinputlisting[caption=Contoh kode untuk Menampilkan data perbaris,label={lst:Getrowfield}]{src/10/Getrowfield.py}
+        \item Fungsi 13 : Updatedata.py yaitu untuk Mengubah data berdasarkan index id.
+            \lstinputlisting[caption=Contoh kode untuk Mengubah data berdasarkan index id,label={lst:Updatedata}]{src/10/Updatedata.py}
+        \item Fungsi 14 : Deletedata.py yaitu untuk Menghapus data berdasarkan index id.
+            \lstinputlisting[caption=Contoh kode untuk Menghapus data berdasarkan index id,label={lst:Deletedata}]{src/10/Deletedata.py}
+        \item Fungsi 15 : Getrowjson.py yaitu untuk Mengubah data menjadi Json.
+            \lstinputlisting[caption=Contoh kode untuk Mengubah data menjadi Json,label={lst:Getrowjson}]{src/10/Getrowjson.py}
+        \item Fungsi 16 : Getalldatajson.py yaitu untuk Menampilkan seluruh data dalam bentuk format Json.
+            \lstinputlisting[caption=Contoh kode untuk Menampilkan seluruh data,label={lst:Getalldatajson}]{src/10/Getalldatajson.py}
+        \item Fungsi 17 : Amountdata.py yaitu untuk Menghitung jumlah data secara keseluruhan dari kolom dan baris.
+            \lstinputlisting[caption=Contoh kode untuk Menghitung jumlah data,label={lst:Amountdata}]{src/10/Amountdata.py}
+        \item Fungsi 18 : Getcolumncount.py yaitu untuk Menghitung jumlah kolom pada file.
+            \lstinputlisting[caption=Contoh kode untuk Menghitung jumlah kolom,label={lst:Getcolumncount}]{src/10/Getcolumncount.py}
+        \item Fungsi 19 : Getrowcount.py yaitu untuk Menghitung jumlah baris pada file.
+            \lstinputlisting[caption=Contoh kode untuk Menghitung jumlah baris,label={lst:Getrowcount}]{src/10/Getrowcount.py}
+        \item Fungsi 20 : Reloaddata.py yaitu untuk Mengembalikan nilai data.
+            \lstinputlisting[caption=Contoh kode untuk Mengembalikan nilai data,label={lst:Reloaddata}]{src/10/Reloaddata.py}
       \end{itemize}
+        
+  \item Endpoint 1 (URL API / Dataset)
+  Pembatasan pertama ialah dari Endpoint 1 dimana URL API nya yaitu dataset. Silahkan tuliskan code dibawah sebagai contoh pertama :
+  \lstinputlisting[caption=Contoh kode untuk URL API,label={lst:MethodGetfromEndpoint}]{src/10/MethodGetfromEndpoint.py}
+  
+  Pada tabel code diatas dapat dilihat bahwa fungsi yang digunakn ialah dataset dimana data set dilakukan pemaggilan fungsi yang ada di file-file yang telah di import. Seperti yang bisa dilihat bahwa pada fungsi dataset direalisasikan dengan metode GET, POST dan DELETE jadi disesuaikan dengan fungsi pada file-file yang dihubungkan atau dipanggil kedalam fungsi dataset.
 \end{enumerate}
 
 \section {Mendapatkan Parameter GET Python Flask}
