@@ -119,12 +119,30 @@ Untuk pemberian contoh ini akan dibarengin dengan tutorial pembangunannya, jadi 
         \item Fungsi 20 : Reloaddata.py yaitu untuk Mengembalikan nilai data.
             \lstinputlisting[caption=Contoh kode untuk Mengembalikan nilai data,label={lst:Reloaddata}]{src/10/Reloaddata.py}
       \end{itemize}
-        
+
   \item Endpoint 1 (URL API / Dataset)
   Pembatasan pertama ialah dari Endpoint 1 dimana URL API nya yaitu dataset. Silahkan tuliskan code dibawah sebagai contoh pertama :
   \lstinputlisting[caption=Contoh kode untuk URL API,label={lst:MethodGetfromEndpoint}]{src/10/MethodGetfromEndpoint.py}
-  
-  Pada tabel code diatas dapat dilihat bahwa fungsi yang digunakn ialah dataset dimana data set dilakukan pemaggilan fungsi yang ada di file-file yang telah di import. Seperti yang bisa dilihat bahwa pada fungsi dataset direalisasikan dengan metode GET, POST dan DELETE jadi disesuaikan dengan fungsi pada file-file yang dihubungkan atau dipanggil kedalam fungsi dataset.
+
+  Pada tabel code diatas dapat dilihat bahwa fungsi yang digunakn ialah dataset dimana data set dilakukan pemaggilan fungsi yang ada di file-file yang telah di import. Seperti yang bisa dilihat bahwa pada fungsi dataset direalisasikan dengan metode GET, POST dan DELETE jadi disesuaikan dengan fungsi pada file-file yang dihubungkan atau dipanggil kedalam fungsi dataset. Yang akan dibahas disini adalah MEthod GETnya saja. Tutorialnya sebagai berikut :
+  \begin{itemize}
+    \item Setelah melakukan perintah \ref{lst:MethodGetfromEndpoint}
+    \item Kemudian masukkan perintah yang sesuai
+    \item Pendefinisian endpoint dataset
+    \item Definisikan request atau permintaan metode yang digunakan. Ada Get 
+    \item Pada Method GET : Silahkan masukkan beberapa argument yang akan diolah.
+    \item Argumentnya ialah parameter field, topfive, sort dan format
+    \item Penjelasan Parameter :
+        \subitem All : Mengambil semua data dari file csv
+        \subitem Field : Mengambil data berdasarkan parameter field yaitu ada RawValue, sign dan daya
+        \subitem Topfive : Mengambil 5 data berdasarkan data paling atas dan 5 data paling bawah
+        \subitem Sort : Mengambil data dan diurutkan sesuai dengan urutan ascending (kecil ke besar) dan descending (besar ke kecil)
+        \subitem Format : Menampilkan data dengan format tulisan JSON dan Raw
+    \item Selanjutnya pastikan setiap argument memberikan respon sesuai dengan fungsi masing-masing 
+    \item Kemudian reloaddata akan menampilkan data terbaru setelah dilakukan perintah delete
+    \item Silahkan uji endpointnya sesuai dengan parameter tersebut menggunakan POSTMAN maka hasilnya akan seperti berikut :
+        
+  \end{itemize}
 \end{enumerate}
 
 \section {Mendapatkan Parameter GET Python Flask}
