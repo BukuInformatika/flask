@@ -419,7 +419,79 @@ Tutorial selanjutnya ialah kita akan menginstall Framework Flask dikomputer/lapt
 \item Apabila tampilan pada proses di komputer/laptop anda telah nampak seperti gambar yang dicontohkan maka prosesnya berhasil. Dan  apabila  masih  terjadi  error  maka  silahkan  lakukan  kembali langkah-langkahnya, mungkin anda melewatkan beberapa point pada tutorial ini. Setelah flasknya terpasang di komputer/laptop anda maka silahkan lanjutkan ke tutorial selanjutnya.
 \end{enumerate}
 
-Perintah python flask. Contoh \textit{source code} seperti pada listing \ref{lst:hello}.
+\subsection{Instalasi Library Pandas}
+
+Tutorial selanjutnya ialah kita akan menginstall  Library Pandas dikomputer/laptop kita sehingga bisa digunakan untuk tutorial selanjutnya. Untuk teman-teman ketahui pandas sendiri merupakan library dari bahasa pemrograman Python. Library ini digunakan untuk pemrosesan data analitik. Mengapa kita gunakan? Karena memang pandas ini akan mengolah data analitik dari CSV file yang berisikan data sinyal gelombang otak yan g kita baca dan tangkap dari aktifitas tertentu (lampu sein saat bermotor). Nah mari kita mulai:
+\begin{enumerate}
+\item Pertama-tama silahkan nyalakan laptop / laptop anda.
+\item Kemudian apabila komputer / laptop anda telah bisa digunakan silahkan buka web browser. Web browser yang digunakan bisa Chrome. Mozilla Firefox dll sesuai dengan keinginan anda.
+\item Selanjutnya pada web browser silahkan kunjungi website resmi berikut: https://pypi.org/project/pandas/. Pada website tersebut silahkan download Pandas. Contohnya nampak seperti gambar \ref{fig:download_pandas}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/download_pandas.jpg}}
+	\caption{Download Pandas}
+	\label{fig:download_pandas}
+\end{figure}
+ 
+\item Setelah    di    download    silahkan    buka    Command    Prompt    di komputer/laptop anda.
+\item Kemudian silahkan ketikkan perintah \verb|pip install pandas|.
+\item Setelah  mengetikkan  perintah  tersebut,  silahkan  tekan  enter  maka prosesnya akan belajar. Silahkan tunggu hasilnya
+\item Hasilnya akan nampak seperti gambar \ref{fig:install_pandas}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/install_pandas.jpg}}
+	\caption{Proses Instalasi Pandas}
+	\label{fig:install_pandas}
+\end{figure}
+ 
+\item Apabila tampilan pada proses di komputer/laptop anda telah nampak seperti gambar yang dicontohkan maka prosesnya berhasil. Dan  apabila  masih  terjadi  error  maka  silahkan  lakukan  kembali langkah-langkahnya, mungkin anda melewatkan beberapa point pada tutorial ini.
+\item Setelah pandasnya terpasang di komputer/laptop anda maka silahkan lanjutkan ke tutorial selanjutnya.
+\end{enumerate}
+
+\subsection{Contoh Penerapan Fungsi Pada Flask Python}
+
+Flask adalah kerangka kerja aplikasi web mikro yang ditulis dalam bahasa pemrograman Python dan berdasarkan Werkzeug toolkitdan template engine Jinja2. Berlisensi BSD.
+
+Langkah-langkah membangun Flask:
+\begin{enumerate}
+\item Pertama-tama silahkan pastikan bahwa anda telah menginstall python pada komputer.
+\item Kemudian install framework python yaitu Flask pada CMD.
+\item Buka CMD.
+\item Kemudian ketikkan \verb|pip install flask|. Contohnya seperti pada gambar \ref{fig:install_pip}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/install_pip.jpg}}
+	\caption{Instalasi Pip Flask}
+	\label{fig:install_pip}
+\end{figure} 
+
+\item Gambar   diatas   menunjukkan   bahwa   laptop   anda   telah memiliki flask jadi sudah bisa digunakan.
+\item Kemudian masuklah ke text editor. Dapat memakai sublime, notepad ++ dan lain sebagainya.
+\item Kemudian silahkan memulai memasukkan perintah-perintah Flask.
+\item Sebelum  memulai,  alangkah  baiknya  teman-teman  telah mempelajari flask.
+\item Selanjutnya kita masuk ke bagian perintah python flask. Contoh \textit{source code} seperti pada listing \ref{lst:hello}.
 \lstinputlisting[caption=Contoh kode program hello.py, label={lst:hello}]{src/8/hello.py}
+
  Contoh \textit{source code} main.py seperti pada listing \ref{lst:main}.
 \lstinputlisting[caption=Contoh kode program main.py, label={lst:main}]{src/8/main.py}
+
+\item Masukkan perintah import hello untuk memanggil dan menghubungkan fungsi ke dalam file flask ini.
+\item Pada file flask juga didefinisikan pemanggilan untuk fungsi hello world nya.
+\item Pemanggilannya berupa, apabila parameter word di fungsikan maka akan langsung terhubung dengan fungsi hello world dan tulisan hello worldnya akan tampil sesuai dengan request GetSilahkan jalankan file pada CMD, maka hasilnya akan nampak seperti gambar \ref{fig:call_function1}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/call_function1.jpg}}
+	\caption{Pemanggilan Fungsi Flask Opsi 1}
+	\label{fig:call_function1}
+\end{figure} 
+ 
+\item Atau bisa juga seperti pada gambar \ref{fig:call_function2}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/call_function2.jpg}}
+	\caption{Pemanggilan Fungsi Flask Opsi 2}
+	\label{fig:call_function2}
+\end{figure} 
+ 
+\item Copy URL yang ada pada CMD, check URL di Web Browser. Hasilnya seperti pada gambar \ref{fig:hello_world}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=1\textwidth]{figures/8/hello_world.jpg}}
+	\caption{Output Hello World}
+	\label{fig:hello_world}
+\end{figure} 
+\end{enumerate} 
