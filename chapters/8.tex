@@ -582,12 +582,38 @@ Contoh kasus 3: Untuk tutorial ini, akan dicontohkan penanganan error untuk cont
 \item Ketika dieksekusi, hasilnya nampak seperti gambar diatas.
 \item Tapi kenapa tidak ada hasilnya? Padahal untuk fungsi dan parameternya telah disetting. Coba perhatikan lagi pada script Pythonnya. Ternyata ada yang kurang, selain inputan seharusnya ada keluaran. Nah untuk errornya sendiri ternyata ada pada blokingannya. Dimana Python sangatlah sensitif maka scriptnya juga harus benar. Kita harus menyamakan perintah dengan benar. Penangannan errornya yaitu memberikan SPASI ataupun TAB pada perintah untuk memasukkan inputan dengan benar. Harus sesuai dengan perintah yang lainnya agar dapat dieksekusi dengan benar
 \item Silahkan ganti script dua.py seperti contoh berikut:
-%def hello(nama):
-%	sambutan = "Assalamualaikum"
-%	penggabungan = sambutan + " " + nama
-%	return penggabungan
+\begin{verbatim}
+def hello(nama):
+	sambutan = "Assalamualaikum"
+	penggabungan = sambutan + " " + nama
+	return penggabungan
+\end{verbatim}
 \item Setelah mengganti script diatas, maka silahkan buka CMD. Masuk ke tempat penyimpanan file. Kemudian kettikan perintah Python3 ( untuk masuk ke Pythonnya ). Silahkan eksekusi ulang dengan cara yang sama
 \item Hasilnya sebagai berikut
 \item Hasil yang benar akan nampak seperti gambar tersebut.
 \item Dimana ketika telah berhasil melakukan penyettingan pada parameter yang dieksekusi maka fungsi dari file tersebut akan mengeluarkan keluaran yang sesuai. Keluarannya tentunya akan berupa string. Semuanya sesuai dengan settingan yang telah dibuat pada file dua.py
+\end{enumerate}
+
+Contoh kasus 4: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang empat. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
+\begin{enumerate}
+\item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
+\item Selanjutnya silahkan buka text editor. Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3. Selanjutnya silahkan buat script Pythonnya, dengan nama file dua.py
+\item Scriptnya dicontohkan seperti pada tabel dibawah:
+\begin{verbatim}
+def hello(nama):
+	sambutan = "Assalamualaikum"
+	penggabungan = sambutan + " " + nama
+return penggabungan
+\end{verbatim}
+\item Setelah membuat script diatas, maka silahkan buka CMD. Masuk ke tempat penyimpanan file. Kemudian kettikan perintah Python3 ( untuk masuk ke Pythonnya )
+\item Silahkan eksekusi mengikuti perintah berikut:
+\item Hasil yang benar akan nampak seperti gambar tersebut.
+\item Terjadi error pada eksekusi tersebut. Ternyata untuk error ini terjadi karena salah perintah dalam pengeksekusian. Pada perintah tersebut, kita memasukkan “ import dua “. Maka akan masuk ke file dua.py
+\item Namun, setelah itu, kita malah memasukkan perintah “ satu.hello(“annisa”). Yang kalau diartikan, maka perintah tersebut ditujukan untuk file satu.py. Maka dari itu, kita harus mengganti perintah yang kita masukkan dalam pengeksekusian. Kalau mengeksekusi file dua.py maka import dan arahan perintahnya harus ke file dua.py
+\item Silahkan eksekusi lagi dengan perintah berikut:
+\item Apabila perintah telah sesuai, maka akan menampilkan hasil yang seperti contoh diatas. Keluarannya tentunya akan berupa string. Semuanya sesuai dengan settingan yang telah dibuat pada file dua.py. Dengan permasalahan yang sama, apabila kita secara tidak sengaja menemukan error juga ketika mengeksekusi file satu.py maka penyelesaiannya mirip seperti contoh diatas
+\item Dimisalkan untuk file satu.py errornya seperti ini:
+\item Nah, tentunya kita sudah tau bahwa salahnya pada pemanggilan yang harusnya mengarah kepada file satu.py. Silahkan dibenarkan lagi.
+\item Ikuti contoh eksekusi ini untuk mendapatkan hasil yang benar:
+\item Nah, penyelesainnya seperti diatas. Kita harus memperhatikan perintah yang kita gunakan untuk eksekusi.
 \end{enumerate}
