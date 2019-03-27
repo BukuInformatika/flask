@@ -734,3 +734,23 @@ Contoh kasus 1: Untuk tutorial ini, akan dicontohkan penanganan error untuk cont
 \item Hasilnya akan nampak seperti gambar dibawah dimana perintahnya telah disesuaikan dengan request yang ada dalam file Main.py
 \item Apabila mendapatkan hasil seperti contoh diatas, maka tutorial ini berhasil. 
 \end{enumerate}
+
+Contoh kasus 2: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask. Ini contoh yang kedua. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut:
+\begin{enumerate}
+\item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
+\item Kita akan mengeksekusi main.py, sehingga kita bisa menemukan beberapa error. Karena kita akan mengeksekusi main.py, kita juga akan membangun terlebih dahulu fungsi yang akan dimasukkan dalam main.py ( flask ).
+\item Silahkan buka text editor. Gunakan sublime 3.
+\item Kemudian silahkan buat script berikut :
+\item Fungsi tersebut disimpan dengan nama file get\_top\_five.py. Fungsi tersebut telah dimasukkan kedalam Flask yaitu main.py sehingga ketika dijalankan fungsinya akan dapat dieksekusi di file flask yang sama dengan fungsi yang lain. Fungsinya yaitu untuk menampilkan 5 data teratas ataupun terbawah pada file CSV.
+\item Adapun code flask yang mengeksekusi fungsi ini ialah nampak seperti pada gambar dibawah:
+\item Silahkan masuk ke CMD. Jalankan file main.p dengan masuk ke folder penyimpanannya. Kemudian aktifkan dulu environtment dari file tersebut sehingga Flasknya dapat berjalan.
+\item Untuk pengeksekusiannya seharusnya nampak seperti pada gambar dibawah:
+\item Silahkan untuk pengujiannya bisa dilihat dengan masuk ke dalam URL yang diperlihatkan pada CMD. Pengujian bisa dilakukan dengan memasukkan URL ke dalam web browser biasa maupun Postman. Contoh pengujian ini akan menggunakan Postman biar lebih mudah dan rapih.
+\item Hasilnya akan nampak seperti gambar dibawah dimana perintahnya telah disesuaikan dengan request yang ada dalam file Main.py:
+\item Pengujian diatas menunjukkan hasil untuk 5 angka teratas, dengan perintah \verb|/dataset?topfive=first|
+\item Kemudian untuk pengujian hasil 5 angka terbawah, dengan perintah “\verb|/dataset?topfive=last|
+\item Hasil pengujiannya tidak berbeda dengan perintah \verb| ?topfive=first|. Mengapa? Terjadi error atau kesalahan disini. Ternyata setelah dicheck, pada fungsi get\_top\_five.py hanya mendefinisikan fungsi untuk keluaran 5 data teratas ( headframe ). Apabila kita ingin tetap menampilkan 5 data terbawah maka kita harus menambahkan perintah berikut pada file get\_top\_five.py:
+\item Setelah menambahkan perintah tersebut silahkan disimpan. Kemudian buka kembali CMD. Kemudian aktifkan ulang environtment dari main.py
+\item Lalu silahkan masuk ke Postman untuk pengujiannya
+\item Dengan perintah \verb|/dataset?topfive=last| maka hasilnya nampak seperti berikut:
+\end{enumerate}
