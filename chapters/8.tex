@@ -754,3 +754,27 @@ Contoh kasus 2: Untuk tutorial ini, akan dicontohkan penanganan error untuk cont
 \item Lalu silahkan masuk ke Postman untuk pengujiannya
 \item Dengan perintah \verb|/dataset?topfive=last| maka hasilnya nampak seperti berikut:
 \end{enumerate}
+
+Contoh kasus 3: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask. Ini contoh yang ketiga. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut:
+\begin{enumerate}
+\item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
+\item Kita akan mengeksekusi main.py, sehingga kita bisa menemukan beberapa error. Karena kita akan mengeksekusi main.py, kita juga akan membangun terlebih dahulu fungsi yang akan dimasukkan dalam main.py ( flask )
+\item Silahkan buka text editor. Gunakan sublime 3
+\item Kemudian silahkan buat script berikut:
+\item Fungsi tersebut disimpan dengan nama file delete\_column.py
+\item Fungsi tersebut telah dimasukkan kedalam Flask yaitu main.py sehingga ketika dijalankan fungsinya akan dapat dieksekusi di file flask yang sama dengan fungsi yang lain. Fungsinya yaitu untuk menghapus data sesuai dengan kolom yang telah dijadikan parameter/argumen pada file fungsi tersebut
+\item Adapun code flask yang mengeksekusi fungsi ini ialah nampak seperti pada gambar dibawah:
+\item Silahkan masuk ke CMD. Jalankan file main.p dengan masuk ke folder penyimpanannya. Kemudian aktifkan dulu environtment dari file tersebut sehingga Flasknya dapat berjalan.
+\item Untuk pengeksekusiannya seharusnya nampak seperti pada gambar dibawah: 
+\item Silahkan untuk pengujiannya bisa dilihat dengan masuk ke dalam URL yang diperlihatkan pada CMD. Pengujian bisa dilakukan dengan memasukkan URL ke dalam web browser biasa maupun Postman. Contoh pengujian ini akan menggunakan Postman biar lebih mudah dan rapih.
+\item Hasilnya akan nampak seperti gambar dibawah dimana perintahnya telah disesuaikan dengan request yang ada dalam file Main.py: 
+\item Terjadi error.
+\item Error terjadi karena pada file delete\_all\_data.py yang\ terhubung dengan fungsi delete\_column.py tidak sesuai. Perintah yang dimasukkan tidak di definisikan pada file delete\_all\_data.py yaitu untuk menghapus field “ sign “. Maka harus ditambahkan parameter/argument tersebut
+\item Dan tampilan delete\_all\_data.py nampak seperti berikut:
+\item Nah bisa diliat bahwa pada fungsi didefinisikan field apa saja yang bisa dihapus. Tentunya field ini akan dapat dieksekusi melalu file delete\_column.py.
+\item Ada 3 kolom yang menjadi field yang dapat dieksekusi yaitu Raw\_value, data dan sign. Nah parameter signnya sudah ada, maka apabila dijalankan kembali tidak akan terjadi error.
+\item Silahkan kita check ulang fungsinya. Masuk lagi ke CMD untuk merefresh atau membuka kembali file Flasknya yaitu Main.py. Jangan lupa untuk mengaktifkan environtmentnya seperti pada contoh-contoh yang telah dijelaskan sebelumnya
+\item Hasil pengujiannya nampak seperti pada gambar dibawah: 
+\item Apabila hasilnya nampak seperti pada gambar diatas, maka fungsinya telah berhasil dieksekusi sesuai request yang ada di Python Flask
+\item Maka telah selesai pula tutorial penanganan error ini.
+\end{enumerate}
