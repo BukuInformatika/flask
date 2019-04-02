@@ -1,4 +1,4 @@
-﻿\section{Definisi \textit{Micro Frameworki}}
+﻿\section{Definisi \textit{Micro Framework}}
 
 \textit{Microframework} adalah istilah yang digunakan untuk merujuk pada kerangka kerja web minimalis. Kerangka ini sangat berbeda dengan kerangka kerja tumpukan penuh. Juga tidak memiliki sebagian besar fungsionalitas secara umum yang ada dalam kerangka kerja aplikasi web lengkap, seperti:
 \begin{enumerate}
@@ -345,7 +345,7 @@ Mulai dengan tutorial dalam menginstall Python 2.7. Python ini digunakan untuk c
 \item Silahkan ganti path dengan \verb|C:\Python27| dan \verb|C:\Python27\Scripts| ( Lokasi anda menyimpan mentahan python yang telah anda install tadi ).
 \item Maka tampilannya akan seperti pada gambar \ref{fig:editenv}.
 \begin{figure}[!htbp]
-	\centerline{\includegraphics[width=1\textwidth]{figures/8/editenv.jpg}}
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/editenv.jpg}}
 	\caption{Pengubahan Environment Python 2.7.}
 	\label{fig:editenv}
 \end{figure}
@@ -384,7 +384,7 @@ Selanjutnya kita mulai dengan tutorial dalam menginstall Python 3.6. Python ini 
 \item Silahkan ganti path dengan \verb|C:\Python36| dan \verb|C:\Python36\Scripts| (Lokasi anda menyimpan mentahan python yang telah anda install tadi).
 \item Maka tampilannya akan seperti pada gambar \ref{fig:editenv36}.
 \begin{figure}[!htbp]
-	\centerline{\includegraphics[width=1\textwidth]{figures/8/editenv36.jpg}}
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/editenv36.jpg}}
 	\caption{Pengubahan Environment Python 3.6.}
 	\label{fig:editenv36}
 \end{figure}
@@ -489,7 +489,7 @@ Langkah-langkah membangun Flask:
  
 \item Copy URL yang ada pada CMD, lalu cek URL di Web Browser. Maka hasilnya akan nampak seperti pada gambar \ref{fig:hello_world}.
 \begin{figure}[!htbp]
-	\centerline{\includegraphics[width=1\textwidth]{figures/8/hello_world.jpg}}
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/hello_world.jpg}}
 	\caption{Output Hello World}
 	\label{fig:hello_world}
 \end{figure} 
@@ -504,67 +504,73 @@ Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini c
 \begin{enumerate}
 \item Pertama, pastikan bahwa python telah terinstal di PC/laptop Anda. Anda dapat menggunakan python versi 2 maupun python versi 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
 \item Selanjutnya silahkan buka text editor. Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3.
-\item Selanjutnya silahkan buat script Pythonnya, dengan nama file satu.py. Scriptnya dicontohkan seperti pada listing \ref{lst:satu}.
-\lstinputlisting[firstline=1, lastline=3, caption=File satu.py, label={lst:satu}]{src/8/satu.py}
-\item Apabila telah membuat script seperti pada listing \ref{lst:satu}, maka silahkan buka Command Promp (CMD).
+\item Selanjutnya silahkan buat script Pythonnya, dengan nama file satu.py. Scriptnya dicontohkan seperti pada listing \ref{lst:satu_err1}.
+\lstinputlisting[firstline=1, lastline=3, caption=File satu.py, label={lst:satu}]{src/8/satu_error.py}
+\item Apabila telah membuat script seperti pada listing \ref{lst:satu_err1}, maka silahkan buka Command Promp (CMD).
 \item Kemudian pada CMD silahkan masuk ke tempat file anda tersimpan
 \item Setelah masuk, silahkan check terlebih dahulu dengan perintah “Python2 1.py “
 \item Apabila jalan maka berhasil. Silahkan keluar dari tempat file tersebut. Pada CMD silahkan ketikkan Python3
-\item Kemudian silahkan eksekusi fungsi yang ada pada file tersebut untuk melihat hasilnya. Untuk pengeksekusiannya seperti pada gambar \ref{fig:eksekusi_fungsi}.
+\item Kemudian silahkan eksekusi fungsi yang ada pada file tersebut untuk melihat hasilnya. Untuk pengeksekusiannya seperti pada gambar \ref{fig:eksekusi_fungsi0}.
 \begin{figure}[!htbp]
-	\centerline{\includegraphics[width=1\textwidth]{figures/8/eksekusi_fungsi.png}}
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi0.png}}
 	\caption{Eksekusi Fungsi Percobaan Pertama}
-	\label{fig:eksekusi_fungsi}
+	\label{fig:eksekusi_fungsi0}
 \end{figure} 
 \item Ketika dieksekusi seperti ini. Tapi kenapa tidak ada hasilnya? Padahal untuk fungsi dan parameternya telah disetting. Coba perhatikan lagi pada script Pythonnya. Ternyata ada yang kurang, selain inputan seharusnya ada keluaran
-\item Nah untuk perintah keluarannya belum ada. Untuk perintahnya bisa Print. Silahkan ganti script satu.py seperti contoh berikut:
-\lstinputlisting[firstline=1, lastline=4, caption=File baru satu.py, label={lst:satu1}]{src/8/satu_error.py}
+\item Nah untuk perintah keluarannya belum ada. Untuk perintahnya bisa Print. Silahkan ganti script satu.py seperti listing \ref{lst:satu_err2}.
+\lstinputlisting[firstline=1, lastline=4, caption=File baru satu.py, label={lst:satu_err2}]{src/8/satu_error.py}
 \item Setelah mengganti script diatas, maka silahkan buka CMD. Masuk ke tempat penyimpanan file.
 \item Kemudian ketikan perintah Python3 ( untuk masuk ke Pythonnya )
 \item Silahkan eksekusi ulang dengan cara yang sama
 \item Hasilnya seperti pada gambar \ref{fig:eksekusi_fungsi1}.
 \begin{figure}[!htbp]
-	\centerline{\includegraphics[width=1\textwidth]{figures/8/eksekusi_fungsi1.png}}
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi1.png}}
 	\caption{Eksekusi Fungsi Percobaan Kedua}
 	\label{fig:eksekusi_fungsi1}
 \end{figure}
 \item Ternyata malah menghasilkan error yang berbeda. Nah untuk error berikut dinyatakan bahwa ada yang salah dengan perintah keluaran diatas.
 \item Setelah ditelusuri ternyata salahnya pada penulisan perintah. Mengapa? Dikarenakan kita menggunakan script Python yang sangat sensitif jadi kita harus menyamakan perintah dengan versi Python yang digunakan. Ternyata untuk pemanggilannya tadi kita menggunakan jenis tulisan perintah untuk Python 2. Seharusnya untuk Python3 kita harus menambahkan beberapa tanda yaitu ( ) tanda kurung pada parameternya sehingga bisa dijalankan
-\item Silahkan ganti code seperti pada listing \ref{lst:satu2} berikut :
-\lstinputlisting[firstline=1, lastline=4, caption=File baru satu.py, label={lst:satu2}]{src/8/satu.py}
+\item Silahkan ganti code seperti pada listing \ref{lst:satu_print} berikut :
+\lstinputlisting[firstline=1, lastline=4, caption=File baru satu.py, label={lst:satu_print}]{src/8/satu_print.py}
 \item Setelah mengganti code seperti contoh diatas maka silahkan buka kembali CMD. Command Prompt lalu masuk ke file tempat penyimpanan file satu.py
-\item Silahkan lakukan kembali perintah pemanggilannya seperti pada listing \ref{fig:eksekuai_fungsi2} berikut :
+\item Silahkan lakukan kembali perintah pemanggilannya seperti pada gambar \ref{fig:eksekuai_fungsi2} berikut :
 \begin{figure}[!htbp]
-	\centerline{\includegraphics[width=1\textwidth]{figures/8/eksekusi_fungsi2.png}}
-	\caption{Eksekusi Fungsi Percobaan Ketiiga}
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi2.png}}
+	\caption{Eksekusi Fungsi Percobaan Ketiga}
 	\label{fig:eksekusi_fungsi2}
 \end{figure}
 \item Hasil yang benar akan nampak seperti gambar tersebut. Dimana ketika telah berhasil melakukan penyettingan pada parameter yang dieksekusi maka fungsi dari file tersebut akan mengeluarkan keluaran yang sesuai
 \item Keluarannya tentunya akan berupa string. Semuanya sesuai dengan settingan yang telah dibuat pada file satu.py
 \end{enumerate}
 
-Contoh kasus 2 : Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang kedua. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
+\subsubsection{Contoh kasus 2}
+Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang kedua. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
 (Contoh kedua ini akan muncul error yang sama namun dengan penyelesaiian yang berbeda dari contoh sebelumnya)
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
 \item Selanjutnya silahkan buka text editor. Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3.
-\item Selanjutnya silahkan buat script Pythonnya, dengan nama file satu.py. Scriptnya dicontohkan seperti pada tabel dibawah :
-def hello(nama):
-%	sambutan = "Assalamualaikum"
-%	penggabungan = sambutan + " " + nama
+\item Selanjutnya silahkan buat script Pythonnya, dengan nama file satu.py. Scriptnya dicontohkan seperti pada listing \ref{lst:satu_err3}.
+\lstinputlisting[firstline=1, lastline=3, caption=File baru satu.py, label={lst:satu_err3}]{src/8/satu_error.py}
 \item Apabila telah membuat script seperti diatas maka silahkan buka CMD. CMD adalah Command Prompt, software bawaan laptop anda. Kemudian pada CMD silahkan masuk ke tempat file anda tersimpan. Setelah masuk, silahkan check terlebih dahulu dengan perintah “ Python2 1.py “
 \item Apabila jalan maka berhasil. Silahkan keluar dari tempat file tersebut. Pada CMD silahkan ketikkan Python3
-\item Kemudian silahkan eksekusi fungsi yang ada pada file tersebut untuk melihat hasilnya. Untuk pengeksekusiannya seperti pada gambar
+\item Kemudian silahkan eksekusi fungsi yang ada pada file tersebut untuk melihat hasilnya. Untuk pengeksekusiannya seperti pada gambar \ref{fig:eksekusi_fungsi3}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi3.png}}
+	\caption{Eksekusi Fungsi Percobaan Keempat}
+	\label{fig:eksekusi_fungsi3}
+\end{figure}
 \item Ketika dieksekusi seperti ini. Tapi kenapa tidak ada hasilnya? Padahal untuk fungsi dan parameternya telah disetting
 \item Coba perhatikan lagi pada script Pythonnya. Ternyata ada yang kurang, selain inputan seharusnya ada keluaran. Nah untuk perintah keluarannya belum ada. Untuk perintahnya bisa Return. Contoh yang pertama menggunakan print dan ternyata seharusnya kita menggunakan perintah Return karena lebih sering dan memang seharusnya dipakai untuk pengembalian keluaran pada fungsi Python
-\item Silahkan ganti script satu.py seperti contoh berikut:
-%def hello(nama):
-%	sambutan = "Assalamualaikum"
-%	penggabungan = sambutan + " " + nama
-%	return penggabungan
+\item Silahkan ganti script satu.py seperti pada listing \ref{lst:satu_return}.
+\lstinputlisting[caption=File baru satu.py, label={lst:satu_return}]{src/8/satu_return.py}
 \item Setelah mengganti script diatas, maka silahkan buka CMD. Masuk ke tempat penyimpanan file. Kemudian kettikan perintah Python3 ( untuk masuk ke Pythonnya ). Silahkan eksekusi ulang dengan cara yang sama
-\item Hasilnya sebagai berikut 
-\item Hasil yang benar akan nampak seperti gambar tersebut.
+\item Hasilnya seperti pada gambar \ref{fig:eksekusi_fungsi4}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi4.png}}
+	\caption{Eksekusi Fungsi Percobaan Kelima}
+	\label{fig:eksekusi_fungsi4}
+\end{figure}
+\item Hasil yang benar akan nampak seperti gambar \ref{fig:eksekusi_fungsi4}.
 \item Dimana ketika telah berhasil melakukan penyettingan pada parameter yang dieksekusi maka fungsi dari file tersebut akan mengeluarkan keluaran yang sesuai. Keluarannya tentunya akan berupa string
 \item Semuanya sesuai dengan settingan yang telah dibuat pada file satu.py
 \end{enumerate}
