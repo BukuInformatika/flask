@@ -609,23 +609,38 @@ Contoh kasus 4: Untuk tutorial ini, akan dicontohkan penanganan error untuk cont
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
 \item Selanjutnya silahkan buka text editor. Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3. Selanjutnya silahkan buat script Pythonnya, dengan nama file dua.py
-\item Scriptnya dicontohkan seperti pada tabel dibawah:
-\begin{verbatim}
-def hello(nama):
-	sambutan = "Assalamualaikum"
-	penggabungan = sambutan + " " + nama
-return penggabungan
-\end{verbatim}
+\item Scriptnya dicontohkan seperti pada listing \ref{lst:dua_in3}
+\lstinputlisting[firstline=7, lastline=10, caption=File baru dua.py, label={lst:dua_in3}]{src/8/dua.py}
 \item Setelah membuat script diatas, maka silahkan buka CMD. Masuk ke tempat penyimpanan file. Kemudian kettikan perintah Python3 ( untuk masuk ke Pythonnya )
-\item Silahkan eksekusi mengikuti perintah berikut:
+\item Silahkan eksekusi mengikuti perintah berikut seperti pada gambar \ref{fig:eksekusi_fungsi8}
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi8.png}}
+	\caption{Eksekusi Fungsi Percobaan Kedelapan}
+	\label{fig:eksekusi_fungsi8}
+\end{figure}
 \item Hasil yang benar akan nampak seperti gambar tersebut.
 \item Terjadi error pada eksekusi tersebut. Ternyata untuk error ini terjadi karena salah perintah dalam pengeksekusian. Pada perintah tersebut, kita memasukkan “ import dua “. Maka akan masuk ke file dua.py
 \item Namun, setelah itu, kita malah memasukkan perintah “ satu.hello(“annisa”). Yang kalau diartikan, maka perintah tersebut ditujukan untuk file satu.py. Maka dari itu, kita harus mengganti perintah yang kita masukkan dalam pengeksekusian. Kalau mengeksekusi file dua.py maka import dan arahan perintahnya harus ke file dua.py
-\item Silahkan eksekusi lagi dengan perintah berikut:
+\item Silahkan eksekusi lagi dengan perintah berikut seperti pada gambar \ref{fig:eksekusi_fungsi9}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi9.png}}
+	\caption{Eksekusi Fungsi Percobaan Kesembilan}
+	\label{fig:eksekusi_fungsi9}
+\end{figure}
 \item Apabila perintah telah sesuai, maka akan menampilkan hasil yang seperti contoh diatas. Keluarannya tentunya akan berupa string. Semuanya sesuai dengan settingan yang telah dibuat pada file dua.py. Dengan permasalahan yang sama, apabila kita secara tidak sengaja menemukan error juga ketika mengeksekusi file satu.py maka penyelesaiannya mirip seperti contoh diatas
-\item Dimisalkan untuk file satu.py errornya seperti ini:
+\item Dimisalkan untuk file satu.py errornya seperti pada gambar \ref{fig:eksekusi_fungsi10}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi10.png}}
+	\caption{Eksekusi Fungsi Percobaan Kesepuluruh}
+	\label{fig:eksekusi_fungsi10}
+\end{figure}
 \item Nah, tentunya kita sudah tau bahwa salahnya pada pemanggilan yang harusnya mengarah kepada file satu.py. Silahkan dibenarkan lagi.
-\item Ikuti contoh eksekusi ini untuk mendapatkan hasil yang benar:
+\item Ikuti contoh eksekusi seperti pada gambar \ref{fig:eksekusi_fungsi11} untuk mendapatkan hasil yang benar.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi11.png}}
+	\caption{Eksekusi Fungsi Percobaan Kesebelas}
+	\label{fig:eksekusi_fungsi11}
+\end{figure}
 \item Nah, penyelesainnya seperti diatas. Kita harus memperhatikan perintah yang kita gunakan untuk eksekusi.
 \end{enumerate}
 
