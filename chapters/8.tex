@@ -575,7 +575,8 @@ Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini c
 \item Semuanya sesuai dengan settingan yang telah dibuat pada file satu.py
 \end{enumerate}
 
-Contoh kasus 3: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang ketiga. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
+\subsection{Contoh kasus 3}
+Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang ketiga. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
 \item Selanjutnya silahkan buka text editor. Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3
@@ -605,7 +606,8 @@ Contoh kasus 3: Untuk tutorial ini, akan dicontohkan penanganan error untuk cont
 \item Dimana ketika telah berhasil melakukan penyettingan pada parameter yang dieksekusi maka fungsi dari file tersebut akan mengeluarkan keluaran yang sesuai. Keluarannya tentunya akan berupa string. Semuanya sesuai dengan settingan yang telah dibuat pada file dua.py
 \end{enumerate}
 
-Contoh kasus 4: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang empat. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
+\subsection{Contoh kasus 4}
+ Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang empat. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
 \item Selanjutnya silahkan buka text editor. Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3. Selanjutnya silahkan buat script Pythonnya, dengan nama file dua.py
@@ -644,21 +646,19 @@ Contoh kasus 4: Untuk tutorial ini, akan dicontohkan penanganan error untuk cont
 \item Nah, penyelesainnya seperti diatas. Kita harus memperhatikan perintah yang kita gunakan untuk eksekusi.
 \end{enumerate}
 
-Contoh kasus 5: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang kelima. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
+\subsection{Contoh kasus 5}
+Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang kelima. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
 (Contoh Python ini digunakan dalam pembuatan script python untuk pembacaan gelombang otak)
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 2.
 \item Selanjutnya silahkan buka text editor. Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3.
 \item Selanjutnya silahkan buat script Pythonnya, dengan nama file coba.py
-\item Scriptnya dicontohkan seperti pada listing \ref{lst:coba.py}.
+\item Scriptnya dicontohkan seperti pada listing \ref{lst:coba}.
 \lstinputlisting[caption=File coba.py, label={lst:coba}]{src/8/coba.py}
 \item Pada code diatas mendefinisikan perintah dimana fungsinya akan dipanggil dan berhubungan dengan mindwave.py. Seperti contoh perintah headset.connect dimana fungsinya akan diproses di mindwave.py sehingga apabila hasilnya benar dan sesuai maka akan muncul kata “connecting” seperti perintah print diatas. Apabila alat dan code sesuai maka fungsinya akan jalan, baik itu connected, standby dll. 
 \item Nah untuk pembacaan sinyalnya, kita menggunakan variabel dari mindwave.py. Untuk variabelnya bisa dicoba yang attention / blink / meditation dll secara bersamaan juga bisa asal perintahnya benar.
 \item Perhatikan code ini:
-\begin{verbatim}
-headset = mindwave.Headset('COM4', '1425')
-time.sleep(2)
-\end{verbatim}
+\lstinputlisting[firstline=5, lastline=6, caption=File coba.py, label={lst:coba}]{src/8/coba.py}
 \item Untuk mengkoneksikan code dengan alat sehingga terhubung maka serial dari alat tersebut harus benar. Portnya yaitu COM4 dapat dilihat dengan cara :
 \begin{itemize}
 \item Buka pengaturan laptop anda
@@ -671,31 +671,35 @@ time.sleep(2)
 \end{itemize}
 \item Time.sleep itu gunanya untuk memberikan jeda pembacaan sinyal sehingga nilai gelombang yang dibaca tidak terlalu cepat dan dapat lebih terpantau. Lebih jelasnya lagi, mengapa time.sleepnya bernilai ( 0.001953125 ) dikarenakan :
 \item Silahkan perhatikan ini:
-\begin{verbatim}
-print "raw_value: %s" % (headset.raw_value)
- time.sleep(0.001953125)
-\end{verbatim} 
+\lstinputlisting[firstline=19, lastline=20, caption=File coba.py, label={lst:coba}]{src/8/coba.py}
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/measures.png}}
+	\caption{Deskripsi Pengukuran}
+	\label{fig:measures}
+\end{figure}
 \item Sampling rate dari alat yang digunakan ialah 512Hz jadi tentunya kita harus mengikuti dan menyesuaikannya dengan baik, untuk code dan alatnya. Nah kemudian 512Hz tersebut kita bagi dengan 1 ( detik ) jadi hasilnya akan menjadi jeda antara sinyal yang telah ditangkap/ dibaca dari alat. 1/512 = 0.001953125 . nah nilai itu yang akan menjadi jeda pada code.
  Selain itu. Kita juga harus memastikan apakah benar bahwa dalam 1 detik itu ada 512 data yang dibaca dan ditangkah oleh alat Dan sesuai hasil dari penguijannya sudah dibuktikan dalam setiap detiknya ada sekitar 480-520an data perdetik.
 \item Setelah semua langkah di atas telah dilakukan, kita akan mencoba running coba.py melalui cmd, dengan cara :
 \item Buka Command Prompt di komputer/laptop anda masing-masing. Silahkan pada CMD arahkan ke folder / directory tempat file coba.py anda simpan
 \item Namun sebelum itu pastikan alat sudah terpasang baterai dan lampu indikator berwarna merah. Masukkan USB ke port yang ada di laptop anda. USBnya tentu milik dari alat mindwavenya
 \item Kemudian silahkan masukkan perintah python coba.py
-\item Apabila pas anda jika terjadi ERROR seperti gambar dibawah ini  
+\item Apabila pas anda jika terjadi ERROR seperti gambar \ref{fig:eksekusi_program}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_program.png}}
+	\caption{Error pada program coba.py}
+	\label{fig:eksekusi_program}
+\end{figure}
 \item ERROR diatas sebenarnya menunjukan bahwa indentasi codingan anda tak sesuai maka yang perlu dilakukan ialah rapikan code anda sesuai dengan perintah-perintah terkait. Biasanya ERROR ini terjadi ketika code anda tak berada pada tempatnya maka silahkan sesuaikan dengan SPACI ataupun TAB. 
 \item Silahkan Run kembali
-\item Ketika di Run, dan terjadi ERROR ditengah jalan seperti ini lagi :
+\item Ketika di Run, dan terjadi ERROR ditengah jalan seperti pada gambar \ref{fig:error_program}
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/error_program.png}}
+	\caption{Keterangan error pada program coba.py}
+	\label{fig:error_program}
+\end{figure}
 \item Maka anda harus menerapkan Try and Except pada codingan mindwavenya.
-\item Contohnya seperti berikut :
-\begin{verbatim}
-if code == RAW_VALUE:
-  try:
-   anu = value[0]
-   itu = value[1]
-  except IndexError:
-   anu = "0"
-   itu = "0"
-\end{verbatim}
+\item Contohnya seperti pada listing \ref{lst:try_except}
+\lstinputlisting[caption=File try\_except.py, label={lst:try_except}]{src/8/try_except.py}
 \item Penggunaan try dan except yaitu untuk menangani error pada code yang dihindari untuk terjadi ketika sedang membaca sinyal. Dimisalkan penangangan errornya untuk penanganan index. Selain index sebenarnya bisa juga untuk menangani error pada IO, database, dictionary dan lain-lain.
 \item Setelah penerapan tersebut silahkan re-run file coba.py. Maka tidak akan terjadi error lagi.
 \end{enumerate}
