@@ -575,7 +575,7 @@ Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini c
 \item Semuanya sesuai dengan settingan yang telah dibuat pada file satu.py
 \end{enumerate}
 
-\subsection{Contoh kasus 3}
+\subsubsection{Contoh kasus 3}
 Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang ketiga. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
@@ -606,7 +606,7 @@ Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini c
 \item Dimana ketika telah berhasil melakukan penyettingan pada parameter yang dieksekusi maka fungsi dari file tersebut akan mengeluarkan keluaran yang sesuai. Keluarannya tentunya akan berupa string. Semuanya sesuai dengan settingan yang telah dibuat pada file dua.py
 \end{enumerate}
 
-\subsection{Contoh kasus 4}
+\subsubsection{Contoh kasus 4}
  Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang empat. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
@@ -646,7 +646,7 @@ Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini c
 \item Nah, penyelesainnya seperti diatas. Kita harus memperhatikan perintah yang kita gunakan untuk eksekusi.
 \end{enumerate}
 
-\subsection{Contoh kasus 5}
+\subsubsection{Contoh kasus 5}
 Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang kelima. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
 (Contoh Python ini digunakan dalam pembuatan script python untuk pembacaan gelombang otak)
 \begin{enumerate}
@@ -704,13 +704,15 @@ Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini c
 \item Setelah penerapan tersebut silahkan re-run file coba.py. Maka tidak akan terjadi error lagi.
 \end{enumerate}
 
-Contoh kasus 6: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang keenam. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
+\subsubsection{Contoh kasus 6}
+Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python. Ini contoh yang keenam. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut: 
 (Contoh Python ini digunakan dalam pembuatan script python untuk pembacaan gelombang otak)
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 2.
 \item Selanjutnya silahkan buka text editor. Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3.
 \item Selanjutnya silahkan buat script Pythonnya, dengan nama file coba.py
-\item Scriptnya dicontohkan seperti pada tabel dibawah 
+\item Scriptnya dicontohkan seperti pada listing \ref{lst:coba_lagi}
+\lstinputlisting[firstline=1, lastline=20, caption=File coba\_lagi.py, label={lst:coba_lagi}]{src/8/coba_lagi.py}
 \item Pada code diatas mendefinisikan perintah dimana fungsinya akan dipanggil dan berhubungan dengan mindwave.py
 \item Seperti contoh perintah headset.connect dimana fungsinya akan diproses di mindwave.py sehingga apabila hasilnya benar dan sesuai maka akan muncul kata “connecting” seperti perintah print diatas. Apabila alat dan code sesuai maka fungsinya akan jalan, baik itu connected, standby dll. 
 \item Nah untuk pembacaan sinyalnya, kita menggunakan variabel dari mindwave.py. Sebenarnya penjelasan lengkap untuk tutorial pembangunan script python ini sama dengan contoh kasus kelima
@@ -719,32 +721,57 @@ Contoh kasus 6: Untuk tutorial ini, akan dicontohkan penanganan error untuk cont
 \item Buka Command Prompt di komputer/laptop anda masing-masing. Silahkan pada CMD arahkan ke folder / directory tempat file coba.py anda simpan.
 \item Namun sebelum itu pastikan alat sudah terpasang baterai dan lampu indikator berwarna merah. Masukkan USB ke port yang ada di laptop anda. USBnya tentu milik dari alat mindwavenya
 \item Kemudian silahkan masukkan perintah python coba.py. Maka akan muncul error dimana hasilnya tidak akan muncul
-\item Hal tersebut dikarenakan ada perintah yang kurang dalam script. Seharusnya kita juga memasukkan perintah berikut:
+\item Hal tersebut dikarenakan ada perintah yang kurang dalam script. Seharusnya kita juga memasukkan perintah seperti pada listing \ref{lst:cobalagi} berikut:
+\lstinputlisting[firstline=22, caption=File coba\_lagi.py, label={lst:cobalagi}]{src/8/coba_lagi.py}
 \item Silahkan Run kembali, maka file akan mengeluarkan sinyal datanya.
 \end{enumerate}
 
 \subsection{Penanganan Error dalam Flask}
 
-Contoh kasus 1: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask. Ini contoh yang pertama. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut:
+\subsubsection{Contoh kasus 1}
+Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask. Ini contoh yang pertama. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut:
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
 \item Selanjutnya silahkan buka text editor.Untuk text editornya bisa apa saja. Namun, untuk tutorial ini dicontohkan dengan menggunakan Sublime 3.
 \item Selanjutnya silahkan buat script Python Flasknya. Script lengkap Python Flasknya dapat ditemukan di Tutorial Proyek yang telah dibuat sebelumnya 
-\item Contoh Potongan scriptnya seperti pada tabel dibawah:
+\item Contoh Potongan scriptnya seperti pada listing \ref{lst:import}.
+\lstinputlisting[firstline=1, lastline=19, caption=File import.py, label={lst:import}]{src/8/import.py}
 \item Apabila telah membuat script seperti diatas maka silahkan buka CMD. CMD adalah Command Prompt, software bawaan laptop anda. Kemudian pada CMD silahkan masuk ke folder tempat penyimpanan file. Kemudian aktifkan dulu environtment dari file tersebut sehingga Flasknya dapat berjalan.
-\item Untuk pengeksekusiannya seharusnya nampak seperti pada gambar dibawah:
+\item Untuk pengeksekusiannya seharusnya nampak seperti pada gambar \ref{fig:eksekusi_fungsi12}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi12.png}}
+	\caption{Eksekusi Program import.py}
+	\label{fig:eksekusi_fungsi12}
+\end{figure}
 \item Namun, ketika dieksekusi malah hasilnya nampak seperti gambar berikut:
 \item Error tersebut menyatakan bahwa kita tidak mendefinisikan module pandas pada file codingan yang telah dibuat
-\item Maka kita harus memasukkan perintah berikut:
+\item Maka kita harus memasukkan perintah seperti pada listing \ref{lst:importlagi}.
+\lstinputlisting[firstline=21, caption=File import.py, label={lst:importlagi}]{src/8/import.py}
 \item Perintah tersebut ditaruh setelah perintah pengimportan module yang lain seperti jsonify, request maupun flask. Setelah itu silahkan buka CMD kembali. Pada CMD silahkan lakukan perintah yang sama yaitu menjalankan file Main.py dengan mengaktifkan environtmentnya terlebih dahulu.
-\item Contohnya nampak seperti pada gambar dibawah:
+\item Contohnya nampak seperti pada gambar \ref{fig:eksekusi_fungsi13}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi13.png}}
+	\caption{Eksekusi Program import.py}
+	\label{fig:eksekusi_fungsi13}
+\end{figure}
 \item Apabila perintah yang anda lakukan nampak seperti pada contoh diatas, berarti flasknya telah berhasil berjalan. Silahkan untuk pengujiannya bisa dilihat dengan masuk ke dalam URL yang diperlihatkan pada CMD. Pengujian bisa dilakukan dengan memasukkan URL ke dalam web browser biasa maupun Postman
 \item Contoh pengujian ini akan menggunakan Postman biar lebih mudah dan rapih.
-\item Hasilnya akan nampak seperti gambar dibawah dimana perintahnya telah disesuaikan dengan request yang ada dalam file Main.py
-\item Apabila mendapatkan hasil seperti contoh diatas, maka tutorial ini berhasil. 
+\item Hasilnya akan nampak seperti gambar \ref{fig:eksekusi_fungsi14}, dimana perintahnya telah disesuaikan dengan request yang ada dalam file Main.py
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi14.png}}
+	\caption{Eksekusi Program import.py}
+	\label{fig:eksekusi_fungsi14}
+\end{figure}
+\item Apabila mendapatkan hasil seperti gambar \ref{fig:hasil_import}, maka tutorial ini berhasil. 
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/hasil_import.png}}
+	\caption{Hasil Eksekusi Program import.py}
+	\label{fig:hasil_import}
+\end{figure}
 \end{enumerate}
 
-Contoh kasus 2: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask. Ini contoh yang kedua. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut:
+\subsubsection{Contoh kasus 2}
+Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask. Ini contoh yang kedua. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut:
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
 \item Kita akan mengeksekusi main.py, sehingga kita bisa menemukan beberapa error. Karena kita akan mengeksekusi main.py, kita juga akan membangun terlebih dahulu fungsi yang akan dimasukkan dalam main.py ( flask ).
