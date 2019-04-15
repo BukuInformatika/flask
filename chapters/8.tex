@@ -814,26 +814,40 @@ Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask.
 \end{figure}
 \end{enumerate}
 
-Contoh kasus 3: Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask. Ini contoh yang ketiga. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut:
+\subsubsection{Contoh kasus 3}
+Untuk tutorial ini, akan dicontohkan penanganan error untuk contoh Python Flask. Ini contoh yang ketiga. Sebelum menangani error. Akan dijelaskan terlebih dahulu tutorial untuk pembangunan Pythonnya kemudian akan masuk kepada penanganan error yang ada. Silahkan simak dan ikuti tutorial berikut:
 \begin{enumerate}
 \item Pertama-tama silahkan pastikan bahwa di laptop anda telah terinstall Python. Python yang digunakan ada Python 2 dan Python 3. Untuk tutorial pertama ini, kita akan menggunakan Python 3.
 \item Kita akan mengeksekusi main.py, sehingga kita bisa menemukan beberapa error. Karena kita akan mengeksekusi main.py, kita juga akan membangun terlebih dahulu fungsi yang akan dimasukkan dalam main.py ( flask )
 \item Silahkan buka text editor. Gunakan sublime 3
-\item Kemudian silahkan buat script berikut:
+\item Kemudian silahkan buat script seperti pada listing \ref{lst:delete_column}.
+\lstinputlisting[firstline=1, lastline=2, caption=File delete\_column.py, label={lst:delete_column}]{src/8/delete_column.py}
 \item Fungsi tersebut disimpan dengan nama file delete\_column.py
 \item Fungsi tersebut telah dimasukkan kedalam Flask yaitu main.py sehingga ketika dijalankan fungsinya akan dapat dieksekusi di file flask yang sama dengan fungsi yang lain. Fungsinya yaitu untuk menghapus data sesuai dengan kolom yang telah dijadikan parameter/argumen pada file fungsi tersebut
-\item Adapun code flask yang mengeksekusi fungsi ini ialah nampak seperti pada gambar dibawah:
+\item Adapun code flask yang mengeksekusi fungsi ini ialah nampak seperti pada listing \ref{lst:main3}.
+\lstinputlisting[caption=File main.py, label={lst:main3}]{src/8/main3.py}
 \item Silahkan masuk ke CMD. Jalankan file main.p dengan masuk ke folder penyimpanannya. Kemudian aktifkan dulu environtment dari file tersebut sehingga Flasknya dapat berjalan.
 \item Untuk pengeksekusiannya seharusnya nampak seperti pada gambar dibawah: 
 \item Silahkan untuk pengujiannya bisa dilihat dengan masuk ke dalam URL yang diperlihatkan pada CMD. Pengujian bisa dilakukan dengan memasukkan URL ke dalam web browser biasa maupun Postman. Contoh pengujian ini akan menggunakan Postman biar lebih mudah dan rapih.
-\item Hasilnya akan nampak seperti gambar dibawah dimana perintahnya telah disesuaikan dengan request yang ada dalam file Main.py: 
+\item Hasilnya akan nampak seperti gambar \ref{fig:eksekusi_fungsi17}, dimana perintahnya telah disesuaikan dengan request yang ada dalam file main.py.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/eksekusi_fungsi17.png}}
+	\caption{Eksekusi Program main.py}
+	\label{fig:eksekusi_fungsi17}
+\end{figure}
 \item Terjadi error.
 \item Error terjadi karena pada file delete\_all\_data.py yang\ terhubung dengan fungsi delete\_column.py tidak sesuai. Perintah yang dimasukkan tidak di definisikan pada file delete\_all\_data.py yaitu untuk menghapus field “ sign “. Maka harus ditambahkan parameter/argument tersebut
-\item Dan tampilan delete\_all\_data.py nampak seperti berikut:
+\item Dan tampilan delete\_all\_data.py nampak seperti pada listing \ref{lst:delete_all_data}.
+\lstinputlisting[caption=File delete\_all\_data.py, label={lst:delete_all_data}]{src/8/delete_all_data.py}
 \item Nah bisa diliat bahwa pada fungsi didefinisikan field apa saja yang bisa dihapus. Tentunya field ini akan dapat dieksekusi melalu file delete\_column.py.
 \item Ada 3 kolom yang menjadi field yang dapat dieksekusi yaitu Raw\_value, data dan sign. Nah parameter signnya sudah ada, maka apabila dijalankan kembali tidak akan terjadi error.
 \item Silahkan kita check ulang fungsinya. Masuk lagi ke CMD untuk merefresh atau membuka kembali file Flasknya yaitu Main.py. Jangan lupa untuk mengaktifkan environtmentnya seperti pada contoh-contoh yang telah dijelaskan sebelumnya
-\item Hasil pengujiannya nampak seperti pada gambar dibawah: 
-\item Apabila hasilnya nampak seperti pada gambar diatas, maka fungsinya telah berhasil dieksekusi sesuai request yang ada di Python Flask
+\item Hasil pengujiannya nampak seperti pada gambar \ref{fig:hasil_delete}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/8/hasil_delete.png}} 
+	\caption{Hasil Eksekusi Program main.py}
+	\label{fig:hasil_delete}
+\end{figure}
+\item Apabila hasilnya nampak seperti pada gambar \ref{fig:hasil_delete}, maka fungsinya telah berhasil dieksekusi sesuai request yang ada di Python Flask
 \item Maka telah selesai pula tutorial penanganan error ini.
 \end{enumerate}
