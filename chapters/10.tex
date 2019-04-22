@@ -180,4 +180,22 @@ ini adalah contoh untuk pengeksekusian file python yang berupa gunsi yang telah 
   \item Contoh kasus 2 : Kode pembawa sinyal gelombang otak (NeuroSky Mindwave EEG). Kodenya seperti contoh \ref{lst:coba}, silahkan tutorialnya diikuti terlebih dahulu.
 \lstinputlisting[caption=Contoh kode untuk membaca sinyal gelombang otak,label={lst:coba}]{src/10/coba.py}
 \end{enumerate}
-
+\begin{itemize}
+\item Script Code pada listing \ref{lst:coba} mendefinisikan perintah dimana fungsinya akan dipanggil dan berhubungan dengan mindwave.py
+\item Seperti contoh perintah headset.connect dimana fungsinya akan diproses di mindwave.py sehingga apabila hasilnya benar dan sesuai maka akan muncul kata “connecting” seperti perintah print diatas
+\item Apabila alat dan code sesuai maka fungsinya akan jalan, baik itu connected, standby dll.
+\item Untuk pembacaan sinyalnya, kita menggunakan variabel dari mindwave.py 
+\item Untuk variabelnya bisa dicoba yang attention / blink / meditation dll secara bersamaan juga bisa asal perintahnya benar. 
+\item Perhatikan script code pada listing \ref{lst:coba1} ini :
+\lstinputlisting[firstline=4, lastline=5, caption=Contoh1 kasus 2,label={lst:coba1}]{src/10/coba.py}
+\item Untuk mengkoneksikan code dengan alat sehingga terhubung maka serial dari alat tersebut harus benar. Portnya yaitu COM4 dapat dilihat dengan cara :
+\begin{enumerate}
+\item Buka pengaturan laptop anda 
+\item Kemudian pilih device manager 
+\item Lalu pilih alat yang anda gunakan misalnya : Mindwave Neurosky 
+\item Apabila telah diklik maka akan muncul portnya yaitu COM4  
+\item Untuk serialnya dapat dilihat dari alatnya sendiri  
+\item Pengecekannya yaitu di dalam tempat baterai. Serialnya 1425 g. Port dan serial itu beda-beda tergantung dari alatnya masing-masing 
+\end{enumerate}
+\item Time.sleep itu gunanya untuk memberikan jeda pembacaan sinyal sehingga nilai gelombang yang dibaca tidak terlalu cepat dan dapat lebih terpantau. Lebih jelasnya lagi, mengapa time.sleepnya bernilai ( 0.001953125 ) dikarenakan : 
+\end{itemize}
