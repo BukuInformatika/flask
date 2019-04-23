@@ -165,7 +165,7 @@ Untuk pemberian contoh ini akan dibarengin dengan tutorial pembangunannya, jadi 
   \item Contoh Kasus 1 : Penerapan fungsi sederhana yang dieksekusi dicommand prompt. Contoh pemanggilan fungsi apabila dieksekusi di CMD, seperti gambar \ref{fig:contohsederhana}
 
   \begin{figure}[!ht]
-        \centerline{\includegraphics[width=0.70\textwidth]{figures/10/contohsederhana.jpg}}
+        \centerline{\includegraphics[width=0.85\textwidth]{figures/10/contohsederhana.jpg}}
 	    \caption{Fungsi Sederhana}
 	    \label{fig:contohsederhana}
   \end{figure}
@@ -187,7 +187,7 @@ ini adalah contoh untuk pengeksekusian file python yang berupa gunsi yang telah 
 \item Untuk pembacaan sinyalnya, kita menggunakan variabel dari mindwave.py 
 \item Untuk variabelnya bisa dicoba yang attention / blink / meditation dll secara bersamaan juga bisa asal perintahnya benar. 
 \item Perhatikan script code pada listing \ref{lst:coba1} ini :
-\lstinputlisting[firstline=4, lastline=5, caption=Contoh1 kasus 2,label={lst:coba1}]{src/10/coba.py}
+\lstinputlisting[firstline=5, lastline=6, caption=Contoh1 kasus 2,label={lst:coba1}]{src/10/coba.py}
 \item Untuk mengkoneksikan code dengan alat sehingga terhubung maka serial dari alat tersebut harus benar. Portnya yaitu COM4 dapat dilihat dengan cara :
 \begin{enumerate}
 \item Buka pengaturan laptop anda 
@@ -198,4 +198,35 @@ ini adalah contoh untuk pengeksekusian file python yang berupa gunsi yang telah 
 \item Pengecekannya yaitu di dalam tempat baterai. Serialnya 1425 g. Port dan serial itu beda-beda tergantung dari alatnya masing-masing 
 \end{enumerate}
 \item Time.sleep itu gunanya untuk memberikan jeda pembacaan sinyal sehingga nilai gelombang yang dibaca tidak terlalu cepat dan dapat lebih terpantau. Lebih jelasnya lagi, mengapa time.sleepnya bernilai ( 0.001953125 ) dikarenakan : 
+\item Silahkan perhatikan ini :
+%Tabel 3. Contoh 2 kasus 2 print "raw_value: %s" % (headset.raw_value)  time.sleep(0.001953125) 
+%Gambar 3. Sampling contoh kasus 2 
+\item Sampling rate dari alat yang digunakan ialah 512Hz jadi tentunya kita harus mengikuti dan menyesuaikannya dengan baik, untuk code dan alatnya.
+\item Kemudian 512Hz tersebut kita bagi dengan 1 ( detik ) jadi hasilnya akan menjadi jeda antara sinyal yang telah ditangkap/ dibaca dari alat.
+\item 1/512 = 0.001953125 . Nilai itu yang akan menjadi jeda pada code. 
+\item Selain itu. Kita juga harus memastikan apakah benar bahwa dalam 1 detik itu ada 512 data yang dibaca dan ditangkah oleh alat.
+\item Dan sesuai hasil dari penguijannya sudah dibuktikan dalam setiap detiknya ada sekitar 480-520an data perdetik 
+\end{itemize}
+ 
+Setelah semua langkah di atas telah dilakukan, kita akan mencoba running coba.py melalui cmd, dengan cara :
+\begin{itemize}
+\item Buka Command Prompt di komputer/laptop anda masing-masing 
+\item Silahkan pada CMD arahkan ke folder / directory tempat file coba.py anda simpan 
+\item Namun sebelum itu pastikan alat sudah terpasang baterai dan lampu indikator berwarna merah 
+\item Masukkan USB ke port yang ada di laptop anda. USBnya tentu milik dari alat mindwavenya 
+\item Kemudian silahkan masukkan perintah python coba.py 
+\item Apabila pas anda jika terjadi ERROR seperti gambar dibawah ini   
+%Gambar 4. Error 1 contoh kasus 2 
+ \item ERROR diatas sebenarnya menunjukan bahwa indentasi codingan anda tak sesuai maka yang perlu dilakukan ialah rapikan code anda sesuai dengan perintah-perintah terkait. Biasanya ERROR ini terjadi ketika code anda tak berada pada tempatnya maka silahkan sesuaikan dengan SPACI ataupun TAB. 
+\item Silahkan Run kembali
+\item Ketika di Run, dan terjadi ERROR ditengah jalan seperti ini lagi : 
+%Gambar 5. Error 2 contoh kasus 2 
+\item Maka anda harus menerapkan Try and Except pada codingan mindwavenya 
+\item Contohnya seperti berikut : 
+%Tabel 4. Try and Except if code == RAW_VALUE:   try:    anu = value[0]    itu = value[1]   except IndexError:    anu = "0"    itu = "0" 
+\item Penggunaan try dan except yaitu untuk menangani error pada code yang dihindari untuk terjadi ketika sedang membaca sinyal  
+\item Dimisalkan penangangan errornya untuk penanganan index 
+\item Selain index sebenarnya bisa juga untuk menangani error pada IO, database, dictionary dan lain-lain. 
+\item Setelah penerapan tersebut silahkan re-run file coba.py 
+\item Maka tidak akan terjadi error lagi 
 \end{itemize}
