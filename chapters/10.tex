@@ -230,3 +230,44 @@ Setelah semua langkah di atas telah dilakukan, kita akan mencoba running coba.py
 \item Setelah penerapan tersebut silahkan re-run file coba.py 
 \item Maka tidak akan terjadi error lagi 
 \end{itemize}
+
+Contoh kasus 3: Code fungsi Python sederhana ( silahkan diikuti tutorialnya terlebih dahulu )
+
+1. ( ERROR 1 ) : Fungsi di definisikan dalam Python dengan def. Setelah def ada nama pengenal fungsi diikut dengan parameter yang diapit oleh tanda kurung dan diakhir dingan tanda titik dua ( : ). Baris berikutnya berupa blok fungsi yang akan dijalankan jika fungsi dipanggil. Perhatikan script code pada listing ]ref{lst:hello1} :
+\lstinputlisting[caption=Fungsi hello1.py untuk error 1,label={lst:hello1}]{src/10/hello1.py}
+
+Berdasarkan code diatas, telah didefinisikan fungsi berupa hello dimana parameternya yaitu nama. Kemudian terdapat 2 variabel baru yang dijadikan inputan pada fungsi tersebut. lebih jelasnya dapat membaca dan mengikuti langkah-langkah di bawah ini : 
+\begin{itemize}
+\item Pertama-tama silahkan buat file python dengan nama basreng.py 
+\item Selanjutnya buat fungsi bernama hello 
+\item Kemudian buka kurung lalu diisi dengan parameter “nama” kemudian tutup kurung lagi 
+\item Jangan lupa untuk memberikan titik dua pada perintah sehingga dapat terbaca dan dijalankan 
+\item Silahkan inputkan perintah yang ingin dieksekusi dalam fungsi hello 
+\item Dimisalkan pada contoh diatas dibuatkan variabel “sambutan” 
+\item Variabel “sambutan” di definisikan dengan keluaran string “halo” 
+\item Kemudian buatlah variabel baru dengan nama “gabung” 
+\item Setelah itu pada variabel “gabung” masukkan variabel “sambutan” lalu tambahkan tanda (+) lalu masukkan perintah nama
+\item Setelah itu masukkan perintah return 
+\item Pada perintah return ikutkan variabel yang ingin dieksekusi dan lihatlah keluarannya (output) 
+\item Karena yang dikembalikan adalah variabel “gabung” maka hasilnya akan berupa “halo (nama yang anda masukkan)” . misal : Halo Fadila. 
+\item Itu adalah hasil yang diiginkan, namun 
+\item Ketika telah mengikuti tutorial diatas, dan diuji di cmd, hasilnya seperti ini. 
+\item Terjadi ERROR. Kita lihat Error berikut : 
+%Gambar 6. Error 1 untuk error 1 pada contoh kasus 3 
+\item Errornya bertuliskan : IndentationError: expected an indented block
+\item Arti dari ERROR tersebut ialah, identasi dan penempatan dari fungsinya tidak sesuai.  
+\end{itemize}
+
+Code python sangatlah sensitif jadi penempatannya harus sesuai. Penanganannya yaitu silahkan terapkan TAB atau SPACI sehingga perintahnya sesuai dan dapat dieksekusi sehingga mengikuti perintah-perintah yang berkaitan lainnya.
+\begin{itemize}
+\item Code yang benar seperti berikut : 
+Tabel 6. Fungsi hello 2 untuk error 1  
+\begin{verbatim}
+def hello(nama): 
+	sambutan = "halo" gabung = sambutan + " " + nama 
+ 	return gabung 
+\end{verbatim}
+\item Maka ketika kita menguji ulang pada CMD, hasilnya akan seperti berikut: 
+%Gambar 7. Penyelesaian untuk error 1 pada contoh kasus 3 
+\item Keluarannya benar, yaitu Halo Fadila 
+\end{itemize}
