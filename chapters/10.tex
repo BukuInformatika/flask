@@ -271,3 +271,37 @@ def hello(nama):
 %Gambar 7. Penyelesaian untuk error 1 pada contoh kasus 3 
 \item Keluarannya benar, yaitu Halo Fadila 
 \end{itemize}
+
+2. ( ERROR 2 ) : Silahkan lihat fungsi selanjutnya :
+Tabel 7. Fungsi hello 1 untuk error 2  
+\begin{verbatim}
+def hello(nama):  
+	sambutan = "halo" 
+	gabung = sambutan + " " + nama 
+ 	print sambutan
+\end{verbatim}
+\begin{itemize}
+\item Fungsi diatas sama halnya dengan penjelasan code sebelumnya 
+\item Yang di definisikan yaitu fungsi hello 
+\item Dimana parameternya adalah nama 
+\item Dengan 2 variabel baru yaitu sambutan dan juga gabung 
+\item Penyetingannya pun sama dimana pada variabel gabung di definisikan pemanggilan untuk variabel sambutan yang diikuti dengan parameter untuk penginputan nama
+\item Yang membedakan ialah keluarannya 
+\item Code sebelumnya memberikan perintah return yaitu pengembalian 
+\item Pada code ini memberikan perintah print yaitu menampilkan 
+\item Variabel yang difungsikan yaitu variabel sambutan 
+\item Kemudian, ketika di check pada CMD terdapat ERROR seperti berikut: 
+%Gambar 8. Error 1 untuk error 2 contoh kasus 3 
+\item Error disini bertuliskan : SyntaxError: Missing parentheses in call to 'print'. Did you meatprint(sambutan)? 
+\item Cara penanganannya yaitu kita harus memberikan tanda kurung pada variabel sambutan untuk outputnya. Mengapa demikian? Karena python yang digunakan adalah python 3. Python 3 dengan Python 2 dibedakan dengan adanya ( ) pada code nya. Jadi kita harus menambahkan tutup dan buka kurung pada variabel tersebut sehingga tidak terjadi ERROR lagi 
+\item Code yang benar : 
+Tabel 8. Fungsi hello 2 untuk error 2 
+\begin{verbatim}
+def hello(nama):  
+	sambutan = "halo"  gabung = sambutan + " " + nama 
+	print (sambutan)
+\end{verbatim} 
+\item Jadi bagi teman-teman semuanya harusnya memperhatikan codenya 
+\item Serta python apa yang digunakan sehingga tidak akan terjadi ERROR kembali 
+\item Penyelesaiaanya kurang lebih seperti itu. 
+\end{itemize}
