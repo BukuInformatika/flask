@@ -471,3 +471,55 @@ Tabel 14. Main.py ( Flask ) untuk error 7
 \item Setelah itu, silahkan lanjutkan sesuai langkah-langkah sebelumnya, maka tidak akan terjadi ERROR lagi. 
 \end{enumerate}
 \end{itemize}
+
+8. ( ERROR 8 ) : 
+ERROR selanjutnya akan di dapatkan dari codingan yang sama seperti pada ERROR 7. 
+\begin{itemize}
+\item Silahkan jalankan file main.py menggunakan CMD 
+\item Kemudian arahkan pada directory tempat anda menyimpan file tersebut 
+\item Selanjutnya ketikkan perintah berikut : python3 main.py 
+\item Maka akan muncul ERROR lagi seperti ini : 
+%Gambar 19. Error 1 untuk error 8 contoh kasus 3 
+\item Mengapa ERRORnya tetap sama ? 
+\item Padahal di codingan telah di masukkan library pandas, seperti berikut : 
+\item Berarti ada 2 kemungkinan yang harus diperbaiki 
+\item Kemungkinan tersebut ialah : 
+1. Belum melakukan instalasi pandas 
+2. Belum menyesuaikan environtment pada saat eksekusi 
+\item Untuk kemungkinan pertama, tentunya sudah diselesaikan pada tutorial ERROR 7 
+\item Berarti yang harus dibenahi adalah kemungkinan kedua 
+\item Silahkan buka kembali CMD anda 
+\item Kemudian masuk ke Directory tempat anda menyimpan file main.py 
+\item Kemudian masukkan perintah berikut : Env/scripts/activate 
+\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3 
+\item Maka hasilnya akan nampak seperti berikut : 
+%Gambar 20. Aktivasi main.py pada contoh kasus 3 
+\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik 
+\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa. 
+\end{itemize}
+ 
+9. ( ERROR 9 ) : 
+ERROR selanjutnya akan di dapatkan dari codingan yang sama seperti pada ERROR 7 
+\begin{itemize}
+\item Silahkan jalankan kembali CMD anda 
+\item Kemudian masuk ke Directory tempat anda menyimpan file main.py 
+\item Kemudian masukkan perintah berikut : Env/scripts/activate 
+\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3 
+\item Maka hasilnya akan nampak seperti berikut : 
+%Gambar 21. Aktivasi main.py 2 pada contoh kasus 3 
+\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik 
+\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa. 
+\item Hasilnya seperti berikut, apabila dieksekusi sesuai endpoint. 
+\item Misalnya endpoint : dataset/<id> 
+%Gambar 22. Hasil pengujian 1 untuk error 9 pada contoh kasus 3 
+\item Kemudian apabila muncul ERROR seperti berikut : 
+%Gambar 23. Error 1 untuk error 9 pada contoh kasus 3 
+\item Maka tindakannya seperti berikut : 
+\item Perhatikan terlebih dahulu request yang diminta 
+\item Request yang diminta yaitu field dengan parameter kolom sign 
+\item Silahkan diperiksa dulu apakah pada file yang ingin di get, kolom tersebut masih ada. 
+\item Apabila tidak ada, maka silahkan masukkan file baru yang ada kolom signnya 
+\item Kemudian silahkan jalankan kembali requestnya 
+\item Maka hasilnya akan nampak seperti berikut : 
+%Gambar 24. Hasil pengujian 2 untuk error 9 pada contoh kasus 3 
+\end{itemize}
