@@ -523,3 +523,32 @@ ERROR selanjutnya akan di dapatkan dari codingan yang sama seperti pada ERROR 7
 \item Maka hasilnya akan nampak seperti berikut : 
 %Gambar 24. Hasil pengujian 2 untuk error 9 pada contoh kasus 3 
 \end{itemize}
+
+
+11. ( ERROR 11 ) : ERROR selanjutnya akan di dapatkan dari codingan yang sama seperti pada ERROR 7 
+\begin{itemize}
+\item Silahkan jalankan kembali CMD anda 
+\item Kemudian masuk ke Directory tempat anda menyimpan file main.py 
+\item Kemudian masukkan perintah berikut : Env/scripts/activate 
+\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3 
+\item Maka hasilnya akan nampak seperti berikut : 
+%Gambar 29. Aktivasi main.py 4 pada contoh kasus 3 
+\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik 
+\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa. 
+\item Hasilnya seperti berikut, apabila dieksekusi sesuai endpoint. 
+\item Misalnya endpoint : dataset/<id> 
+%Gambar 30. Hasil pengujian 1 untuk error 11 pada contoh kasus 3 
+\item Kemudian apabila muncul ERROR seperti berikut: 
+%Gambar 31. Error 1 untuk error 11 pada contoh kasus 3
+\item Maka tindakannya seperti berikut : 
+\item Perhatikan terlebih dahulu request yang diminta 
+\item Request yang diminta yaitu id 4000 
+\item Silahkan diperiksa kembali apakah pada filenya ada id 4000 yang bisa diubah 
+\item Tidak ada, maka dari itu silahkan coba  diganti dengan id yang terdapat dala file tersebut 
+\item Seperti ini : dataset/2000 
+\item Ketika requestnya seperti itu maka hasilnya akan muncul
+\item Silahkan jalankan kembali requestnya 
+\item Maka hasilnya akan nampak seperti berikut : 
+%Gambar 32. Hasil pengujian 2 untuk error 11 pada contoh kasus 3 
+\item Maka id yang ke POST atau Update yaitu id 2000 dengan isi yang dapat diliat seperti pada gambar diatas.
+\end{itemize}
