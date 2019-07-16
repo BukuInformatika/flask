@@ -1,0 +1,1 @@
+Pip install "nama modul"

@@ -28,6 +28,7 @@ Metode GET digunakan untuk meminta representasi suber daya yang ditentukan. perm
   \item Permintaan GET hanya digunakan untuk meminta data (tidak dimodifikasi).
   \item Permintaan GET dibatasi oleh panjang string sebanyak 2047 karakter.
   \item Permintaan GET memungkinkan pengunjung langsung memasukkan nilai variable pada form proses.
+  \item Variabel diambil dengan \$\_REQUEST[“nama”] atau \$\_GET[“nama”]
 \end{itemize}
 
 \subsection{Pembacaan HTTP Get Method}
@@ -120,7 +121,7 @@ Untuk pemberian contoh ini akan dibarengin dengan tutorial pembangunannya, jadi 
             \lstinputlisting[caption=Contoh kode untuk Mengembalikan nilai data,label={lst:Reloaddata}]{src/10/Reloaddata.py}
       \end{itemize}
 
-  \item Endpoint 1 (URL API / Dataset)
+ \subsection{Endpoint 1 (URL API / Dataset)}
   Pembatasan pertama ialah dari Endpoint 1 dimana URL API nya yaitu dataset. Silahkan tuliskan code dibawah sebagai contoh pertama :
   \lstinputlisting[caption=Contoh kode untuk URL API,label={lst:MethodGetfromEndpoint}]{src/10/MethodGetfromEndpoint.py}
 
@@ -145,437 +146,497 @@ Untuk pemberian contoh ini akan dibarengin dengan tutorial pembangunannya, jadi 
   \end{itemize}
 \end{enumerate}
 
+\begin{itemize}
+\item HASIL PENGUJIAN ( Fungsi Dataset, method: GET ):
+\end{itemize}
+
+\begin{enumerate}
+\item Menampilkan data secara keseluruhan ( /dataset ) seperti pada gambar \ref{fig:hujifd1}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifd1.PNG}}
+	\caption{Hasil Pengujian 1 fungsi dataset (GET)}
+	\label{fig:hujifd1}
+\end{figure}
+
+\item Menampilkan data sesuai dengan field yang dimasukkan (/dataset?field=data) seperti pada gambar \ref{fig:hujifd2}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifd2.PNG}}
+	\caption{Hasil Pengujian 2 fungsi dataset (GET)}
+	\label{fig:hujifd2}
+\end{figure}
+
+\item Menampilkan data sesuai dengan field yang dimasukkan (/dataset?field=raw\_value) seperti pada gambar \ref{fig:hujifd3}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifd3.PNG}}
+	\caption{Hasil Pengujian 3 fungsi dataset (GET)}
+	\label{fig:hujifd3}
+\end{figure}
+
+\item Menampilkan data dalam bentuk Json ( /dataset?format=json) seperti pada gambar \ref{fig:hujifd4}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifd4.PNG}}
+	\caption{Hasil Pengujian 4 fungsi dataset (GET)}
+	\label{fig:hujifd4}
+\end{figure}
+
+\item Menampilkan 5 data teratas ( /dataset?topfive=first ) seperti pada gambar \ref{fig:hujifd5}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifd5.PNG}}
+	\caption{Hasil Pengujian 5 fungsi dataset (GET)}
+	\label{fig:hujifd5}
+\end{figure}
+
+\item Menampilkan data dengan urutan besar ke kecil (/dataset?field=data\&sort=descending)
+seperti pada gambar \ref{fig:hujifd6}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifd6.PNG}}
+	\caption{Hasil Pengujian 6 fungsi dataset (GET)}
+	\label{fig:hujifd6}
+\end{figure}
+
+\item Menampilkan 5 data teratas ( /dataset?topfive=first ) seperti pada gambar \ref{fig:hujifd7}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifd7.PNG}}
+	\caption{Hasil Pengujian 7 fungsi dataset (GET)}
+	\label{fig:hujifd7}
+\end{figure}
+
+\item Menampilkan data dengan urutan besar ke kecil (/dataset?field=data\&sort=descending) seperti pada gambar \ref{fig:hujifd8}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifd8.PNG}}
+	\caption{Hasil Pengujian 8 fungsi dataset (GET)}
+	\label{fig:hujifd8}
+\end{figure}
+\end{enumerate}
+
+\subsection{Endpoint 2 ( URL API : /dataset/jumlah )}
+Pembahasan selanjutnya yaitu tutorial untuk pembuatan endpoint kedua ( /dataset/jumlah ). Silahkan tuliskan code seperti pada listing \ref{lst:mge}:
+\lstinputlisting[caption=Method Get dari Endpoint : URL API /dataset/jumlah,label={lst:mge}]{src/10/mge.py}
+Pada listing \ref{lst:mge} ada fungsi jumlah, pada fungsi ini di panggil lah fungsi jumlah\_data yang bisa dieksekusi dengan beberapa nilai seperti misalnya kolom, row dan lain-lain. Bisa dilihat di bagian alur manipulasi data. 
+Tutorial :
+\begin{enumerate}
+\item Silahkan melanjutkan contoh file diatas
+\item Masukkan endpoint dataset/jumlah
+\item Terapkan method Get : dengan fungsi jumlah dimana di dalamnya terdapat argument untuk parameter from ( row dan column )
+\item Penjelasan Parameter From :
+\begin{itemize}
+\item Column		:Akan mengambil dan menampilkan jumlah kolom sesuai dengan kolom yang ada pada file CSV yang dieksekusi.
+\item Row		:Akan mengambil dan menampilkan jumlah baris sesuai dengan baris yang ada pada file CSV yang dieksekusi.
+\end{itemize}
+\item Kemudian pada argument/parameter from tersebut, fungsi jumlah\_data dijadikan sebagai respon
+\item Fungsi jumlah\_data akan menghitung berapa banyak jumlah baris dan kolom pada data ( tertentu, sesuai dengan parameternya yang di get)
+\item Kemudian apabila pengeksekusian tanpa dibarengi dengan argument/parameter maka akan menampilkan jumlah keseluruhan.
+\end{enumerate}
+
+\begin{itemize}
+\item HASIL PENGUJIAN ( Fungsi Dataset/jumlah , method: GET ):
+\end{itemize}
+\begin{enumerate}
+\item Menampilkan jumlah data secara keseluruhan ( /dataset/jumlah ) seperti pada gambar \ref{fig:hujifdj1}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifdj1.PNG}}
+	\caption{Hasil Pengujian 1 fungsi dataset/jumlah (GET)}
+	\label{fig:hujifdj1}
+\end{figure}
+
+\item Menampilkan jumlah data row (/dataset/jumlah?from=row) seperti pada gambar \ref{fig:hujifdj2}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifdj2.PNG}}
+	\caption{Hasil Pengujian 2 fungsi dataset/jumlah (GET)}
+	\label{fig:hujifdj2}
+\end{figure}
+
+\item  Menampilkan jumlah data row (/dataset/jumlah?from=column) seperti pada gambar \ref{fig:hujifdj3}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifdj3.PNG}}
+	\caption{Hasil Pengujian 3 fungsi dataset/jumlah (GET)}
+	\label{fig:hujifdj3}
+\end{figure}
+\end{enumerate}
+
+\subsection{Endpoint 3 ( URL API : /dataset/<id> )}
+Pembahasan selanjutnya yaitu tutorial untuk pembuatan endpoint ketiga ( /dataset/<id> ). Silahkan perhatikan dan ikuti file seperti pada listing \ref{lst:mege}:
+\lstinputlisting[caption=Method Get dari Endpoint : URL API /dataset/<id>,label={lst:mege}]{src/10/mege.py}
+Pada listing \ref{lst:mege} terdapat fungsi detail. Di dalam fungsi tersebut dipergunakan untuk pengeksekusian data memakai fungsi yang diperlukan penentuan index id. Jadi kebanyakan dari hasil fungsi yang dipanggil dan dihubungkan kedalam fungsi detail. 
+Tutorial :
+\begin{enumerate}
+\item Silahkan melanjutkan contoh file diatas
+\item Masukkan endpoint dataset/id
+\item Terapkan method Get : dengan fungsi jumlah dimana di dalamnya terdapat argument untuk parameter field ( raw\_value, data, sign ) dan format ( json )
+\item Penjelasan Parameter :
+\begin{itemize}
+\item All	:Menampilkan data sesuai index id yang dipanggil tanpa parameter tertentu.
+\item Field	:Menampilkan dan mengambil data dari kolom tertentu dan disesuaikan dengan index id yang telah dipanggil
+\item Format	:Menampilkan dan mengambil data dengan format tulisan JSON dan RAW sesuai dengan index id yang dipanggil.
+\end{itemize}
+\item Kemudian pada argument/parameter field tersebut, fungsi get\_row\_field dijadikan sebagai respon
+\item Fungsi get\_row\_field akan mengambil data dari row tersebut sesuai dengan field yang dimasukkan 
+\item Selanjutnya pada argument/parameter format, fungsi jsonify(get\_all\_data\_json) dijadikan sebagai respon
+\item Fungsi get\_all\_data\_json akan mengambil data dari id tersebut dan ditampilkan dengan format json string. 
+ \item Kemudian reload\_data akan menampilkan data terbaru setelah dilakukan perintah delete.
+ \item Setelah semuanya selesai, maka tutorial untuk tahapan ini juga sudah berhasil.
+\end{enumerate}
+\begin{itemize}
+\item HASIL PENGUJIAN ( Fungsi Dataset/<id>, method: GET ):
+\end{itemize}
+\begin{enumerate}
+\item Menampilkan data berdasarkan id ( /dataset/<id>) seperti pada gambar \ref{fig:hujifdi1}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifdi1.PNG}}
+	\caption{Hasil Pengujian 1 fungsi dataset/<id> (GET)}
+	\label{fig:hujifdi1}
+\end{figure}
+
+\item Menampilkan data sesuai id dengan format json (/dataset/1?format=json) seperti pada gambar \ref{fig:hujifdi2}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifdi2.PNG}}
+	\caption{Hasil Pengujian 2 fungsi dataset/<id> (GET)}
+	\label{fig:hujifdi2}
+\end{figure}
+
+\item Menampilkan data sesuai id dengan format raw (/dataset?format=raw) seperti pada gambar \ref{fig:hujifdi3}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujifdi3.PNG}}
+	\caption{Hasil Pengujian 3 fungsi dataset/<id> (GET)}
+	\label{fig:hujifdi3}
+\end{figure}
+
+Gambar 9.14. Hasil pengujian 3 fungsi dataset/<id> (GET)
+\end{enumerate}
+
+\subsection{Endpoint 4 ( URL API : /info )}
+Pembahasan selanjutnya ialah untuk endpoint terakhir yaitu endpoint info. Silahkan perhatikan file dibawah kemudian silahkan anda ikuti seperti pada listing \ref{lst:mgei}:
+\lstinputlisting[caption=Method Get dari Endpoint : URL API /dataset/info,label={lst:mgei}]{src/10/mgei.py}
+
+Pada file ini cukup sederhana fungsinya yaitu hanya untuk mendapatkan data berupa deskripsi bawaan dari library ( bentuknya akan berbeda dari GET data sebelumnya )
+
+Tutorial :
+\begin{enumerate}
+\item Silahkan melanjutkan contoh file diatas
+\item Masukkan endpoint info
+\item Terapkan method Get : dengan fungsi info diatas
+\item Setelah itu silahkan eksekusi menggunakan CMD maka hasilnya akan sebagai berikut :
+\end{enumerate}
+\begin{itemize}
+\item HASIL PENGUJIAN ( Fungsi info, method: GET ):
+\end{itemize}
+Menampilkan data berdasarkan info yang disimpan library pandas ( /info) seperti pada gambar \ref{fig:hujiinf}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hujiinf.PNG}}
+	\caption{Hasil Pengujian 1 fungsi dataset/info (GET)}
+	\label{fig:hujiinf}
+\end{figure}
+
 \section {Mendapatkan Parameter GET Python Flask}
-    \begin{enumerate}
-        \item Pengenalan Python
-        Python adalah salah satu bahasa pemograman tingkat tinggi yang bersifat interpreter, interactive, objectoriented, dan dapat beroperasi hampir di semua platform: Mac, Linux, dan Windows. Python termasuk bahasa pemograman yang mudah dipelajari karena sintaks yang jelas, dapat dikombinasikan dengan penggunaan modulmodul siap pakai, dan struktur data tingkat tinggi yang efisien \cite{kadir2005dasar}. Python mendukung multi paradigma pemrograman, utamanya; namu tidak dibatasi; pada pemrograman berorientasi objek, pemrograman imperatif, dan pemrograman fungsional. Salah satu fitur yang tersedia pada python adalah sebagai bahasa pemrograman dinamis yang dilengkapi dengan manajemen memori otomatis.
+\subsection{Penjelasan Parameter GET Python Flask}
+Parameter GET pada Python Flask ini saya lampirkan dan ujikan dalam bentuk file penuh dengan beberapa fungsi. File tersebut bernama Main.py. Untuk penerapan lebih dan contoh GETnya sudah saya tampilkan dan jelaskan sebelumnya pada point contoh URL GET. 
+Namun, penggabungannya bersama Flask Python ada pada file ini. Silahkan diperhatikan penjelasan dan tutorialnya dan semoga dapat dimengerti. 
 
-        Seperti halnya pada bahasa pemrogrman dinamis lainnya, python umumnya digunakan sebagai bahasa skrip meski pada praktiknya penggunaan bahasa ini lebih luas mencakup konteks pemanfaatan yang umumnya tidak dilakukan dengan menggunakan bahasa skrip. Python dapat digunakan untuk berbagai keperluan pengembangan perangkat lunak dan dapat berjalan di berbagai platform sistem operasi.
-
-        \item Pengenalan Flask
-         Flask adalah \textit{Web Application Framework} yang ditulis dalam bahasa pemrograman Python. Flask digunakan untuk mempersingkat dan mempermudah pengembangan \textit{Web Application}\cite{lokhande2015efficient}. Flask disebut micro framework karena tidak membutuhkan alat-alat tertentu atau pustaka. Flask tidak memiliki database abstraction layer, validasi form, atau komponen lain dimana sudah ada database pihak ketiga yang menyediakan fungsi umum.
-
-        \item Penjelasan Parameter GET Python Flask
-        Parameter GET pada Python Flask ini dilampurkan dan diujikan dalam bentuk file penuh dengan beberapa fungsi. File tersebut bernama Main.py. Untuk penerapan lebih dan contoh GETnya sudah ditampilkan dan dijelaskan sebelumnya pada point contoh URL GET. Namun, penggabungannya bersama Flask Python ada pada file ini. Perhatikan penjelasan dan tutorialnya agar dapat dimengerti. Namun sebelum melanjutkan tutorialnya, pertama-tama anda harus memastikan beberapa hal yaitu sebagai berikut :
-    \end{enumerate}
-
-\section{Macam-Macam Penanganan Error Proyek}
-\subsection{Penanganan Error pada Python dan Flask}
+Namun sebelum melanjutkan tutorial silahkan pertama-tama kita harus memastikan beberapa hal yaitu :
 \begin{enumerate}
-  \item Contoh Kasus 1 : Penerapan fungsi sederhana yang dieksekusi dicommand prompt. Contoh pemanggilan fungsi apabila dieksekusi di CMD, seperti gambar \ref{fig:contohsederhana}
-
-  \begin{figure}[!ht]
-        \centerline{\includegraphics[width=0.85\textwidth]{figures/10/contohsederhana.jpg}}
-	    \caption{Fungsi Sederhana}
-	    \label{fig:contohsederhana}
-  \end{figure}
-
-ini adalah contoh untuk pengeksekusian file python yang berupa gunsi yang telah dibuat. Berikut langkah-langkahnya :
-    \begin{itemize}
-        \item Petama-tama masukkan kedalam directory tempat anda menyimpan file yang telah anda buat.
-        \item kemudian pada directory tersebut ketik python
-        \item Setelah masuk kedalam python silahkan masukkan file python basreng
-    \end{itemize}
-
-  \item Contoh kasus 2 : Kode pembawa sinyal gelombang otak (NeuroSky Mindwave EEG). Kodenya seperti contoh \ref{lst:coba}, silahkan tutorialnya diikuti terlebih dahulu.
-\lstinputlisting[caption=Contoh kode untuk membaca sinyal gelombang otak,label={lst:coba}]{src/10/coba.py}
-\end{enumerate}
+\item Persiapan Python : Instalasi Python 3.6
+Instalasi Python dapat ditemukan di penjelasan sebelumnya ( Sub Menu 1 ). Namun apabila masih belum paham dapat mengikuti langkah-langkah berikut:
 \begin{itemize}
-\item Script Code pada listing \ref{lst:coba} mendefinisikan perintah dimana fungsinya akan dipanggil dan berhubungan dengan mindwave.py
-\item Seperti contoh perintah headset.connect dimana fungsinya akan diproses di mindwave.py sehingga apabila hasilnya benar dan sesuai maka akan muncul kata “connecting” seperti perintah print diatas
-\item Apabila alat dan code sesuai maka fungsinya akan jalan, baik itu connected, standby dll.
-\item Untuk pembacaan sinyalnya, kita menggunakan variabel dari mindwave.py 
-\item Untuk variabelnya bisa dicoba yang attention / blink / meditation dll secara bersamaan juga bisa asal perintahnya benar. 
-\item Perhatikan script code pada listing \ref{lst:coba1} ini :
-\lstinputlisting[firstline=5, lastline=6, caption=Contoh1 kasus 2,label={lst:coba1}]{src/10/coba.py}
-\item Untuk mengkoneksikan code dengan alat sehingga terhubung maka serial dari alat tersebut harus benar. Portnya yaitu COM4 dapat dilihat dengan cara :
+\item Pertama-tama silahkan download software dari python versi 3 di laptop anda.
+\item Download python versi 3.6.3 dari situs web resminya yaitu https://www.python.org/
+\item Silahkan sesuaikan dengan kapasitas laptop anda, bisa yang win 32 atau yang win 64 ( 32 bit / 64 bit )
+\item Contoh downloadnya seperti pada gambar \ref{fig:inspy}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/inspy.PNG}}
+	\caption{Instalasi Python}
+	\label{fig:inspy}
+\end{figure}
+
+\item Setelah berhasil melakukan pengunduhan/download aplikasi python tersebut, maka silahkan lakukan instalasi
+\item Instalasi dapat dilakukan seperti instalasi biasa pada umumnya
+\item Setelah selesai instalasi python, silahkan check di Command Prompt, apakah Pythonnya telah terbaca / running disesuaikan dengan laptop anda atau belum.
+\item Contoh pengecekan di Command Prompt seperti pada gambar \ref{fig:pyc}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/pyc.PNG}}
+	\caption{Python CMD}
+	\label{fig:pyc}
+\end{figure}
+
+\item Apabila tampilannya telah sesuai dengan contoh diatas, maka python anda siap digunakan. 
+\item Pastikan python yang terbaca versi 3.6.3 atau bahkan belum ada sama sekali silahkan lakukan konfigurasi ini :
+\begin{itemize}
+\item Silahkan buka Control Panel anda
+\item Pilih System and Security
+\item Kemudian pilih lagi system
+\item Lalu di bagian kiri tampilan ada sub menu Advanced system setting
+\item Pada sub menu tersebut silahkan pilih button Environment Variabel
+\item Silahkan ganti path dengan C:/Python36 dan C:/Python36/Scripts ( Lokasi anda menyimpan mentahan python yang telah anda install tadi )
+\item Maka tampilannya akan seperti pada gambar \ref{fig:dme}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/dme.PNG}}
+	\caption{Device Manager ( Env )}
+	\label{fig:dme}
+\end{figure}
+
+\item Jangan lupa untuk memasukkan script dari python sehingga benar-benar bisa terbaca untuk pipnya.
+\item Silahkan klik button ok sampai selesai
+\item Setelah itu, lakukan pengecekan ulang di Command Prompt maka hasilnya akan berubah menjadi versi 3.6.3 
+\item Setelah semua tahap di atas selesai, maka silahkan lanjutkan ke tahap berikutnya
+\end{itemize}
+\end{itemize}
+
+\item Persiapan Flask
+
+Tutorial selanjutnya ialah kita akan menginstall Framework Flask di komputer/laptop kita sehingga bisa digunakan untuk tutorial selanjutnya. Untuk teman-teman ketahui flask sendiri merupakan microframework dari python, dengan penggunaannya, aktivas apapun yang kita lakukan baik pengolahan data dll akan terasa lebih mudah dan rapih, kurang lebih seperti itu.
+
+Instalasi Flask dapat ditemukan di penjelasan sebelumnya ( Sub Menu 7 ). Namun apabila masih belum paham dapat mengikuti langkah-langkah berikut :
+\begin{itemize}
+\item Pertama-tama silahkan nyalakan laptop / komputer anda
+\item Kemudian apabila komputer / laptop anda telah bisa digunakan silahkan buka web browser 
+\item Web browser yang digunakan bisa Chrome. Mozilla Firefox dll sesuai dengan keinginan anda.
+\item Selanjutnya pada web browser silahkan kunjungi website resmi berikut : https://pypi.org/project/Flask/
+\item Pada website tersebut silahkan download Flask
+\item Contohnya nampak seperti pada gambar \ref{fig:insfla}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/insfla.PNG}}
+	\caption{Instalasi Flask}
+	\label{fig:insfla}
+\end{figure}
+
+\item Setelah di download silahkan buka Command Prompt di komputer/laptop anda
+\item Kemudian silahkan ketikkan perintah ( pip install flask )
+\item Setelah mengetikkan perintah tersebut, silahkan tekan enter maka prosesnya akan belajar
+\item Silahkan tunggu hasilnya
+\item Hasilnya akan nampak seperti pada gambar \ref{fig:ifc}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/ifc.PNG}}
+	\caption{Install Flask di CMD}
+	\label{fig:ifc}
+\end{figure}
+
+\item Apabila tampilan pada proses di komputer/laptop anda telah nampak seperti gambar yang dicontohkan maka prosesnya berhasil
+\item Dan apabila masih terjadi error maka silahkan lakukan kembali langkah-langkahnya, bisa saja anda melewatkan beberapa point pada tutorial ini
+\item Setelah flasknya terpasang di komputer/laptop anda maka silahkan lanjutkan ke tutorial selanjutnya.
+\end{itemize}
+
+\item Persiapan Library Pandas ( untuk menyesuaikan dengan file CSV yang dieksekusi.
+
+Tutorial selanjutnya ialah kita akan menginstall Library Pandas di komputer/laptop kita sehingga bisa digunakan untuk tutorial selanjutnya. Untuk teman-teman ketahui pandas sendiri merupakan library dari bahasa pemrograman Python. Library ini digunakan untuk pemrosesan data analitik. Mengapa kita gunakan? Karena memang pandas ini akan mengolah data analitik dari CSV file yang berisikan data sinyal gelombang otak yang kita baca dan tangkap dari aktifitas tertentu ( lampu sein saat bermotor ). Nah mari kita mulai:
+
+Instalasi Pandas dapat ditemukan di penjelasan sebelumnya ( Sub Menu 7 ). Namun apabila masih belum paham dapat mengikuti langkah-langkah berikut :
+\begin{itemize}
+\item Pertama-tama silahkan nyalakan laptop / komputer anda
+\item Kemudian apabila komputer / laptop anda telah bisa digunakan silahkan buka web browser 
+\item Web browser yang digunakan bisa Chrome. Mozilla Firefox dll sesuai dengan keinginan anda.
+\item Selanjutnya pada web browser silahkan kunjungi website resmi berikut : https://pypi.org/project/pandas/
+\item Pada website tersebut silahkan download Pandas
+\item Contohnya nampak seperti pada gambar \ref{fig:inspa}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/inspa.PNG}}
+	\caption{Instalasi Pandas}
+	\label{fig:inspa}
+\end{figure}
+
+\item Setelah di download silahkan buka Command Prompt di komputer/laptop anda
+\item Kemudian silahkan ketikkan perintah ( pip install pandas )
+\item Setelah mengetikkan perintah tersebut, silahkan tekan enter maka prosesnya akan belajar
+\item Silahkan tunggu hasilnya
+\item Hasilnya akan nampak seperti pada gambar \ref{fig:ipc}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/ipc.PNG}}
+	\caption{Install Pandas di CMD}
+	\label{fig:ipc}
+\end{figure}
+
+\item Apabila tampilan pada proses di komputer/laptop anda telah nampak seperti gambar yang dicontohkan maka prosesnya berhasil
+\item Dan apabila masih terjadi error maka silahkan lakukan kembali langkah-langkahnya, mungkin anda melewatkan beberapa point pada tutorial ini
+\item Setelah pandasnya terpasang di komputer/laptop anda maka silahkan lanjutkan ke tutorial selanjutnya
+\end{itemize}
+\end{enumerate}
+
+Filenya yang akan dijadikan tutorial yaitu seperti pada listing \ref{lst:mpf}:
+\lstinputlisting[caption=File Main.py Python Flask,label={lst:mpf}]{src/10/mpf.py}
+
+Penjelasan Lengkap :
 \begin{enumerate}
-\item Buka pengaturan laptop anda 
-\item Kemudian pilih device manager 
-\item Lalu pilih alat yang anda gunakan misalnya : Mindwave Neurosky 
-\item Apabila telah diklik maka akan muncul portnya yaitu COM4  
-\item Untuk serialnya dapat dilihat dari alatnya sendiri  
-\item Pengecekannya yaitu di dalam tempat baterai. Serialnya 1425 g. Port dan serial itu beda-beda tergantung dari alatnya masing-masing 
+\item Penjelasan I : Main.py
+\lstinputlisting[caption=Penjelasan I : Main.py,label={lst:pm1}]{src/10/pm1.py}
+
+Listing \ref{lst:pm1} merupakan codingan untuk mendefinisikan framework flask, beberapa module yang digunakan untuk mengeksekusi fungsi seperti request, jsonify dan juga ada library pandas yang digunakan untuk pengeksekusian data analitik seperti file csv yang digunakan. Pada code juga dilakukan pemanggilan file-file yang di dalamnya telah terdapat masing-masing fungsi yang telah dijelaskan sebelumnya sehingga semuanya dapat dieksekusi dalam 1 framework Flask Python.
+Langkah-langkah :
+\begin{itemize}
+\item Silahkan buka sublime anda
+\item Kemudian buatlah file baru dengan nama Main.py
+\item Kemudian silahkan masukkan perintah import
+\item Perintah import apa saja? Silahkan mengimportkan perintah/file sesuai dengan contoh pada gambar
+\end{itemize}
+
+\item Penjelasan II : Main.py
+\lstinputlisting[caption=Penjelasan II : Main.py,label={lst:pm2}]{src/10/pm2.py}
+
+Listing \ref{lst:pm2}  dijelaskan bahwa file yang dieksekusi ialah Book1.csv kemudian variabel dataframenya akan memanggil fungsi load\_data yang di dalamnya juga didefinisikan variabel filename. Indexnya sendiri ialah 1. Untuk fungsi reload\_data memiliki variabel fname dan dfname .
+\begin{itemize}
+\item Silahkan lanjutkan pada file main.py
+\item Kemudian masukkan perintah diatas
+\item Variabel Filename disesuaikan dengan file yang akan diolah ( misal Book1.csv)
+\item Kemudian jangan lupa masukkan variabel dataframe ( tentunya untuk pengolahan data secara keseluruhan )
+\item Lalu, difungsikan juga reload\_data ( mengupdate data ketika ada perubahan )
+\item Jangan lupa untuk menambahkan dataframe.to\_csv sehingga parameternya akan dipisahkan oleh perintah ( sep = “ : ” ) dengan index=false
+\item Selanjutnya silahkan return variabel dataframe
+\end{itemize}
+
+\item Penjelasan III : Main.py
+Penjelasan ini terdiri dari penjelasan untuk setiap endpoint dari Method GETnya.
+\begin{itemize}
+\item Endpoint 1 ( URL API : /dataset ): Telah dijelaskan pada point contoh URL Get. Halaman 7-14
+\item Endpoint 2 ( URL API : /dataset/jumlah ): Telah dijelaskan pada point contoh URL Get. Halaman 7-14
+\item Endpoint 3 ( URL API : /dataset/<id> ): Telah dijelaskan pada point contoh URL Get. Halaman 7-14
+\item Endpoint 4 ( URL API : /info ): Telah dijelaskan pada point contoh URL Get. Halaman 7-14
+\end{itemize}
+
+\item Penjelasan IV : Main.py
+\lstinputlisting[caption=Penjelasan IV : Main.py,label={lst:pm4}]{src/10/pm4.py}
+
+Listing \ref{lst:pm4} difungsikan untuk mengeksekusi inputan yang telah dimasukkan kedalam flask yang menjadi body dari code tersebut yaitu Main.py . Kemudian ketika dijalankan hasilnya true maka aplikasinya akan jalan sesuai dengan yang seharusnya
 \end{enumerate}
-\item Time.sleep itu gunanya untuk memberikan jeda pembacaan sinyal sehingga nilai gelombang yang dibaca tidak terlalu cepat dan dapat lebih terpantau. Lebih jelasnya lagi, mengapa time.sleepnya bernilai ( 0.001953125 ) dikarenakan : 
-\item Silahkan perhatikan ini :
-%Tabel 3. Contoh 2 kasus 2 print "raw_value: %s" % (headset.raw_value)  time.sleep(0.001953125) 
-%Gambar 3. Sampling contoh kasus 2 
-\item Sampling rate dari alat yang digunakan ialah 512Hz jadi tentunya kita harus mengikuti dan menyesuaikannya dengan baik, untuk code dan alatnya.
-\item Kemudian 512Hz tersebut kita bagi dengan 1 ( detik ) jadi hasilnya akan menjadi jeda antara sinyal yang telah ditangkap/ dibaca dari alat.
-\item 1/512 = 0.001953125 . Nilai itu yang akan menjadi jeda pada code. 
-\item Selain itu. Kita juga harus memastikan apakah benar bahwa dalam 1 detik itu ada 512 data yang dibaca dan ditangkah oleh alat.
-\item Dan sesuai hasil dari penguijannya sudah dibuktikan dalam setiap detiknya ada sekitar 480-520an data perdetik 
-\end{itemize}
- 
-Setelah semua langkah di atas telah dilakukan, kita akan mencoba running coba.py melalui cmd, dengan cara :
-\begin{itemize}
-\item Buka Command Prompt di komputer/laptop anda masing-masing 
-\item Silahkan pada CMD arahkan ke folder / directory tempat file coba.py anda simpan 
-\item Namun sebelum itu pastikan alat sudah terpasang baterai dan lampu indikator berwarna merah 
-\item Masukkan USB ke port yang ada di laptop anda. USBnya tentu milik dari alat mindwavenya 
-\item Kemudian silahkan masukkan perintah python coba.py 
-\item Apabila pas anda jika terjadi ERROR seperti gambar dibawah ini   
-%Gambar 4. Error 1 contoh kasus 2 
- \item ERROR diatas sebenarnya menunjukan bahwa indentasi codingan anda tak sesuai maka yang perlu dilakukan ialah rapikan code anda sesuai dengan perintah-perintah terkait. Biasanya ERROR ini terjadi ketika code anda tak berada pada tempatnya maka silahkan sesuaikan dengan SPACI ataupun TAB. 
-\item Silahkan Run kembali
-\item Ketika di Run, dan terjadi ERROR ditengah jalan seperti ini lagi : 
-%Gambar 5. Error 2 contoh kasus 2 
-\item Maka anda harus menerapkan Try and Except pada codingan mindwavenya 
-\item Contohnya seperti berikut : 
-%Tabel 4. Try and Except if code == RAW_VALUE:   try:    anu = value[0]    itu = value[1]   except IndexError:    anu = "0"    itu = "0" 
-\item Penggunaan try dan except yaitu untuk menangani error pada code yang dihindari untuk terjadi ketika sedang membaca sinyal  
-\item Dimisalkan penangangan errornya untuk penanganan index 
-\item Selain index sebenarnya bisa juga untuk menangani error pada IO, database, dictionary dan lain-lain. 
-\item Setelah penerapan tersebut silahkan re-run file coba.py 
-\item Maka tidak akan terjadi error lagi 
-\end{itemize}
 
-Contoh kasus 3: Code fungsi Python sederhana ( silahkan diikuti tutorialnya terlebih dahulu )
-
-1. ( ERROR 1 ) : Fungsi di definisikan dalam Python dengan def. Setelah def ada nama pengenal fungsi diikut dengan parameter yang diapit oleh tanda kurung dan diakhir dingan tanda titik dua ( : ). Baris berikutnya berupa blok fungsi yang akan dijalankan jika fungsi dipanggil. Perhatikan script code pada listing ]ref{lst:hello1} :
-\lstinputlisting[caption=Fungsi hello1.py untuk error 1,label={lst:hello1}]{src/10/hello1.py}
-
-Berdasarkan code diatas, telah didefinisikan fungsi berupa hello dimana parameternya yaitu nama. Kemudian terdapat 2 variabel baru yang dijadikan inputan pada fungsi tersebut. lebih jelasnya dapat membaca dan mengikuti langkah-langkah di bawah ini : 
-\begin{itemize}
-\item Pertama-tama silahkan buat file python dengan nama basreng.py 
-\item Selanjutnya buat fungsi bernama hello 
-\item Kemudian buka kurung lalu diisi dengan parameter “nama” kemudian tutup kurung lagi 
-\item Jangan lupa untuk memberikan titik dua pada perintah sehingga dapat terbaca dan dijalankan 
-\item Silahkan inputkan perintah yang ingin dieksekusi dalam fungsi hello 
-\item Dimisalkan pada contoh diatas dibuatkan variabel “sambutan” 
-\item Variabel “sambutan” di definisikan dengan keluaran string “halo” 
-\item Kemudian buatlah variabel baru dengan nama “gabung” 
-\item Setelah itu pada variabel “gabung” masukkan variabel “sambutan” lalu tambahkan tanda (+) lalu masukkan perintah nama
-\item Setelah itu masukkan perintah return 
-\item Pada perintah return ikutkan variabel yang ingin dieksekusi dan lihatlah keluarannya (output) 
-\item Karena yang dikembalikan adalah variabel “gabung” maka hasilnya akan berupa “halo (nama yang anda masukkan)” . misal : Halo Fadila. 
-\item Itu adalah hasil yang diiginkan, namun 
-\item Ketika telah mengikuti tutorial diatas, dan diuji di cmd, hasilnya seperti ini. 
-\item Terjadi ERROR. Kita lihat Error berikut : 
-%Gambar 6. Error 1 untuk error 1 pada contoh kasus 3 
-\item Errornya bertuliskan : IndentationError: expected an indented block
-\item Arti dari ERROR tersebut ialah, identasi dan penempatan dari fungsinya tidak sesuai.  
-\end{itemize}
-
-Code python sangatlah sensitif jadi penempatannya harus sesuai. Penanganannya yaitu silahkan terapkan TAB atau SPACI sehingga perintahnya sesuai dan dapat dieksekusi sehingga mengikuti perintah-perintah yang berkaitan lainnya.
-\begin{itemize}
-\item Code yang benar seperti berikut : 
-Tabel 6. Fungsi hello 2 untuk error 1  
-\begin{verbatim}
-def hello(nama): 
-	sambutan = "halo" gabung = sambutan + " " + nama 
- 	return gabung 
-\end{verbatim}
-\item Maka ketika kita menguji ulang pada CMD, hasilnya akan seperti berikut: 
-%Gambar 7. Penyelesaian untuk error 1 pada contoh kasus 3 
-\item Keluarannya benar, yaitu Halo Fadila 
-\end{itemize}
-
-2. ( ERROR 2 ) : Silahkan lihat fungsi selanjutnya :
-Tabel 7. Fungsi hello 1 untuk error 2  
-\begin{verbatim}
-def hello(nama):  
-	sambutan = "halo" 
-	gabung = sambutan + " " + nama 
- 	print sambutan
-\end{verbatim}
-\begin{itemize}
-\item Fungsi diatas sama halnya dengan penjelasan code sebelumnya 
-\item Yang di definisikan yaitu fungsi hello 
-\item Dimana parameternya adalah nama 
-\item Dengan 2 variabel baru yaitu sambutan dan juga gabung 
-\item Penyetingannya pun sama dimana pada variabel gabung di definisikan pemanggilan untuk variabel sambutan yang diikuti dengan parameter untuk penginputan nama
-\item Yang membedakan ialah keluarannya 
-\item Code sebelumnya memberikan perintah return yaitu pengembalian 
-\item Pada code ini memberikan perintah print yaitu menampilkan 
-\item Variabel yang difungsikan yaitu variabel sambutan 
-\item Kemudian, ketika di check pada CMD terdapat ERROR seperti berikut: 
-%Gambar 8. Error 1 untuk error 2 contoh kasus 3 
-\item Error disini bertuliskan : SyntaxError: Missing parentheses in call to 'print'. Did you meatprint(sambutan)? 
-\item Cara penanganannya yaitu kita harus memberikan tanda kurung pada variabel sambutan untuk outputnya. Mengapa demikian? Karena python yang digunakan adalah python 3. Python 3 dengan Python 2 dibedakan dengan adanya ( ) pada code nya. Jadi kita harus menambahkan tutup dan buka kurung pada variabel tersebut sehingga tidak terjadi ERROR lagi 
-\item Code yang benar : 
-Tabel 8. Fungsi hello 2 untuk error 2 
-\begin{verbatim}
-def hello(nama):  
-	sambutan = "halo"  gabung = sambutan + " " + nama 
-	print (sambutan)
-\end{verbatim} 
-\item Jadi bagi teman-teman semuanya harusnya memperhatikan codenya 
-\item Serta python apa yang digunakan sehingga tidak akan terjadi ERROR kembali 
-\item Penyelesaiaanya kurang lebih seperti itu. 
-\end{itemize}
-
-(ERROR 3 ) :
-Tabel 9. Fungsi hello 1 untuk error 3
-\begin{verbatim}
-def hello(nama):
-	sambutan = "halo"
-	gabung = sambutan + " " + nama
-	print gabung
-\end{verbatim}
-\begin{itemize}
-\item Fungsi diatas sama halnya dengan penjelasan code sebelumnya
-\item Yang di definisikan yaitu fungsi hello
-\item Dimana parameternya adalah nama
-\item Dengan 2 variabel baru yaitu sambutan dan juga gabung
-\item Penyetingannya pun sama dimana pada variabel gabung di definisikan pemanggilan  untuk  variabel  sambutan  yang  diikuti  dengan  parameter untuk penginputan nama
-\item Yang membedakan ialah keluarannya
-\item Code sebelumnya memberikan perintah return yaitu pengembalian
-\item Pada code ini memberikan perintah print yaitu menampilkan
-\item Variabel yang difungsikan yaitu variabel sambutan
-\item Kemudian, ketika di check pada CMD terdapat ERROR seperti berikut :
-Gambar 9. Error 1 untuk error 3 contoh kasus 3
-\item Error disini bertuliskan :
-SyntaxError:  Missing  parentheses  in  call  to  'print'.  Did  you  mean print (gabung)?
-\item Cara  penanganannya  yaitu  kita  harus  memberikan tanda  kurung  pada variabel sambutan untuk outputnya.
-\item Mengapa demikian? Karena python yang digunakan adalah python 3. 
-\item Python 3 dengan Python 2 dibedakan dengan adanya ( ) pada code nya. 
-\item Jadi kita harus menambahkan tutup dan buka kurung pada variabel tersebut sehingga tidak terjadi ERROR lagi.
-\item Code yang benar:
-Tabel 10. Fungsi hello 2 untuk error 3
-\begin{verbatim}
-def hello(nama):
-	sambutan = "halo"
-	gabung = sambutan + " " + nama
-	print (gabung)
-\end{verbatim}
-\item Jadi bagi teman-teman semuanya harusnya memperhatikan codenya
-\item Serta python apa yang digunakan sehingga tidak akan terjadi ERROR kembali
-\end{itemize}
-
-4. ( ERROR 4 ) : 
-Tabel 11. Fungsi hello 1 untuk error 4  
-\begin{verbatim}
-def hello(nama):
-	sambutan = "halo"  gabung = sambutan + " " + nama 
- 	print (sambutan) 
-\end{verbatim}
-\begin{itemize}
-\item Fungsi diatas sama halnya dengan penjelasan code sebelumnya 
-\item Yang di definisikan yaitu fungsi hello 
-\item Dimana parameternya adalah nama 
-\item Dengan 2 variabel baru yaitu sambutan dan juga gabung 
-\item Penyetingannya pun sama dimana pada variabel gabung di definisikan pemanggilan untuk variabel sambutan yang diikuti dengan parameter untuk penginputan nama 
-\item Yang membedakan ialah keluarannya 
-\item Code sebelumnya memberikan perintah return yaitu pengembalian 
-\item Pada code ini memberikan perintah print yaitu menampilkan 
-\item Variabel yang difungsikan yaitu variabel sambutan 
-\item Kemudian, ketika di check pada CMD terdapat ERROR seperti berikut: 
-%Gambar 10. Error 1 untuk error 4 contoh kasus 3 
-\item Error disini bertuliskan : AttributeError: module 'basreng' has no attribute 'sambutan' 
-\item Mengapa ada ERROR tersebut? Karena pada pemanggilannya untuk dieksekusi salah. Urutannya kita harus memanggil dari nama file, fungsi lalu variabelnya. Cara penanganannya yaitu kita harus menganti cara pemanggian kita sehingga fungsinya ke direct dengan benar. Setelah itu, maka tidak akan mencul ERROR lagi  
-\item Hasil yang benar : 
-%Gambar 11. Penyelesaian untuk error 4 contoh kasus 3 
-\item Jadi bagi teman-teman semuanya harusnya memperhatikan codenya beserta dengan pemanggiannya 
-\item Sehingga tidak akan ada ERROR lagi 
-\item Tapi seharusnya keluarannya RETURN bukan PRINT 
-\item Karena memang fungsi harusnya seperti itu 
-\item Namun ternyata menggunakan PRINT juga bisa mengeluarkan output 
-\item Penyelesaiaanya kurang lebih seperti itu 
-\end{itemize}
- 
-5. ( ERROR 5 ) : 
-Tabel 12. Fungsi hello 1 untuk error 5  
-\begin{verbatim}
-def hello(nama):  
-	sambutan = "halo"  gabung = sambutan + " " + nama 
- 	print (gabung) 
-\end{verbatim}
-\begin{itemize}
-\item Fungsi diatas sama halnya dengan penjelasan code sebelumnya 
-\item Yang di definisikan yaitu fungsi hello 
-\item Dimana parameternya adalah nama 
-\item Dengan 2 variabel baru yaitu sambutan dan juga gabung 
-\item Penyetingannya pun sama dimana pada variabel gabung di definisikan pemanggilan untuk variabel sambutan yang diikuti dengan parameter untuk penginputan nama 
-\item Yang membedakan ialah keluarannya 
-\item Code sebelumnya memberikan perintah return yaitu pengembalian 
-\item Pada code ini memberikan perintah print yaitu menampilkan 
-\item Variabel yang difungsikan yaitu variabel sambutan 
-\item Kemudian, ketika di check pada CMD terdapat ERROR seperti berikut: 
-%Gambar 12. Error 1 untuk error 5 contoh kasus 3 
-\item Error disini bertuliskan : AttributeError: module 'basreng' has no attribute 'gabung' 
-\item Mengapa ada ERROR tersebut? Karena pada pemanggilannya untuk dieksekusi salah. Urutannya kita harus memanggil dari nama file, fungsi lalu variabelnya. Cara penanganannya yaitu kita harus menganti cara pemanggian kita sehingga fungsinya ke direct dengan benar. Setelah itu, maka tidak akan mencul ERROR lagi  
-\item Hasil yang benar : 
-%Gambar 13. Penyelesaian untuk error 5 contoh kasus 3 
-\item Jadi bagi teman-teman semuanya harusnya memperhatikan codenya beserta dengan pemanggiannya 
-\item Sehingga tidak akan ada ERROR lagi 
-\item Tapi seharusnya keluarannya RETURN bukan PRINT 
-\item Karena memang fungsi harusnya seperti itu 
-\item Namun ternyata menggunakan PRINT juga bisa mengeluarkan output 
-\item Penyelesaiaanya kurang lebih seperti itu
-\end{itemize}
-
-6. ( ERROR 6 ) : 
-Tabel 13. Fungsi hello 1 untuk error 6  
-\begin{verbatim}
-def hello(nama):
-	sambutan = "halo"  gabung = sambutan + " " + nama 
-	return gabung
-\end{verbatim}
-\begin{itemize}
-\item Fungsi diatas sama halnya dengan penjelasan code sebelumnya 
-\item Yang di definisikan yaitu fungsi hello 
-\item Dimana parameternya adalah nama 
-\item Dengan 2 variabel baru yaitu sambutan dan juga gabung 
-\item Penyetingannya pun sama dimana pada variabel gabung di definisikan pemanggilan untuk variabel sambutan yang diikuti dengan parameter untuk penginputan nama 
-\item Yang membedakan ialah keluarannya 
-\item Code sebelumnya memberikan perintah return yaitu pengembalian 
-\item Pada code ini memberikan perintah print yaitu menampilkan 
-\item Variabel yang difungsikan yaitu variabel sambutan 
-\item Kemudian, ketika di check pada CMD terdapat ERROR seperti berikut: 
-%Gambar 14. Error 1 untuk error 6 contoh kasus 3 
-\item Error diatas bertuliskan : SyntaxError: invalid syntax 
-\item Mengapa ada ERROR tersebut? Karena pada pemanggilannya untuk dieksekusi salah. Urutannya kita harus memanggil dari nama file, fungsi lalu variabelnya. Cara penanganannya yaitu kita harus menganti cara pemanggian kita sehingga fungsinya ke direct dengan benar. Setelah itu, maka tidak akan mencul ERROR lagi 
-\item Hasil yang benar : 
-%Gambar 15. Penyelesaian untuk error 6 contoh kasus 3 
-\item Jadi bagi teman-teman semuanya harusnya memperhatikan codenya beserta dengan pemanggilannya 
-\item Sehingga tidak akan ada ERROR lagi 
-\end{itemize}
-
-7. ( ERROR 7) : 
-Tabel 14. Main.py ( Flask ) untuk error 7 
-\begin{itemize}
-\item Silahkan terapkan codingan diatas 
-\item Codingan diatas merupakan codingan Flask Pythonnya 
-\item Codingan diatas juga biasa disebut sebagai Flask API 
-\item Apa yang menandakan bahwa code diatas Flask API? Dikarenakan pada code diatas telah di definisikan code berikut :
+\section{Penanganan Error}
+\subsection{Error 1}
 \begin{enumerate}
-\item from flask import Flask, 
-\item app = Flask(\_\_name\_\_) 
-\item if \_\_name\_\_ == "\_\_main\_\_": app.run(debug=True) 
+\item Silahkan jalankan kembali CMD anda
+\item Kemudian masuk ke Directory tempat anda menyimpan file main.py
+\item Kemudian masukkan perintah berikut :
+\verb|Env/scripts/activate|
+\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3
+\item Maka hasilnya akan nampak seperti pada gambar \ref{fig:am2}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/am2.PNG}}
+	\caption{Aktivasi main.py 2 pada contoh kasus 3}
+	\label{fig:am2}
+\end{figure}
+
+\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik
+\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa.
+\item Hasilnya seperti berikut, apabila dieksekusi sesuai endpoint.
+\item Misalnya endpoint : dataset/<id>  seperti pada gambar \ref{fig:huji1}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/huji1.PNG}}
+	\caption{Hasil pengujian 1 untuk error 9 pada contoh kasus 3}
+	\label{fig:huji1}
+\end{figure}
+
+\item Kemudian apabila muncul ERROR seperti pada gambar \ref{fig:err1}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/err1.PNG}}
+	\caption{Error 1 untuk error 9 pada contoh kasus 3}
+	\label{fig:err1}
+\end{figure}
+
+\item Maka tindakannya seperti berikut:
+\begin{itemize}
+\item Perhatikan terlebih dahulu request yang diminta
+\item Request yang diminta yaitu field dengan parameter kolom sign
+\item Silahkan diperiksa dulu apakah pada file yang ingin di get, kolom tersebut masih ada.
+\item Apabila tidak ada, maka silahkan masukkan file baru yang ada kolom signnya
+\item Kemudian silahkan jalankan kembali requestnya
+\item Maka hasilnya akan nampak seperti pada gambar \ref{fig:huji2}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/huji2.PNG}}
+	\caption{Hasil pengujian 2 untuk error 9 pada contoh kasus 3}
+	\label{fig:huji2}
+\end{figure}
+\end{itemize}
 \end{enumerate}
-\item Setelah menerapkan codingan diatas silahkan di simpan dengan nama Main.py 
-\item Kemudian eksekusi menggunakan CMD 
-\item Masuk ke CMD kemudian arahkan ke directory dimana anda menyimpan file tersebut 
-\item Selanjutnya masukkan perintah berikut : Python3 main.py 
-\item Mengapa python 3 ? karena yang digunakan ialah python 3. 
-\item Ketika di Run, maka hasilnya akan seperti berikut : 
-%Gambar 16. Error 1 untuk error 7 contoh kasus 3 
-\item Terjadi ERROR, yang bertuliskan : Tabel 15. Main.py 1 untuk error 7  D:/Buat Praktek/done>python3 main.py 
-\item Mengapa ada ERROR tersebut ? 
-\item Terlihat ERRORnya yaitu kita belum menerapkan penginstalan pandas pada laptop anda. Silahkan install module / library pandas pada laptop anda terlebih dahulu 
-\item Cara menginstallnya ialah sebagai berikut : 
+
+\subsection{Error 2}
 \begin{enumerate}
-\item Silahkan download pandas pandas 
-\item Bukalah Web browser anda yang digunakan bisa Chrome. Mozilla Firefox dll sesuai dengan keinginan anda. 
-\item Selanjutnya pada web browser silahkan kunjungi website resmi berikut : https://pypi.org/project/pandas/ 
-\item Pada website tersebut silahkan download Pandas 
-\item Contohnya nampak seperti gambar di lembar berikutnya : 
-%Gambar 17. Instalasi pandas pada contoh kasus 3 
-\item Setelah di download silahkan buka Command Prompt di komputer/laptop anda 
-\item Kemudian silahkan ketikkan perintah ( pip install pandas ) 
-\item Setelah mengetikkan perintah tersebut, silahkan tekan enter maka prosesnya akan belajar 
-\item Hasilnya akan nampak seperti gambar berikut : 
-%Gambar 18. Instalasi pandas 2 untuk contoh kasus 3 
-\item Setelah itu, silahkan lanjutkan sesuai langkah-langkah sebelumnya, maka tidak akan terjadi ERROR lagi. 
+\item Silahkan jalankan kembali CMD anda
+\item Kemudian masuk ke Directory tempat anda menyimpan file main.py
+\item Kemudian masukkan perintah berikut : \verb|Env/scripts/activate|
+\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3
+\item Maka hasilnya akan nampak seperti pada gambar \ref{fig:am3}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/am3.PNG}}
+	\caption{Aktivasi main.py 3 pada contoh kasus 3}
+	\label{fig:am3}
+\end{figure}
+
+\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik
+\item Bisa dilihat, untuk URL APInya sudah muncul. Silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa.
+\item Hasilnya seperti berikut, apabila dieksekusi sesuai endpoint.
+\item Misalnya endpoint : dataset seperti pada gambar \ref{fig:hu1}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hu1.PNG}}
+	\caption{Hasil pengujian 1 untuk error 10 pada contoh kasus 3}
+	\label{fig:hu1}
+\end{figure}
+
+\item Kemudian apabila muncul ERROR seperti pada gambar \ref{fig:er1}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/er1.PNG}}
+	\caption{Error 1 untuk error 10 pada contoh kasus 3}
+	\label{fig:er1}
+\end{figure}
+
+\item Maka tindakannya seperti berikut	:
+\begin{itemize}
+\item Perhatikan terlebih dahulu request yang diminta
+\item Request yang diminta yaitu format
+\item Silahkan diperiksa kembali apakah pada codingan API nya terdapat request global untuk parameter Format
+\item Ada, namun harus disertai dengan parameter yang lain
+\item Seperti ini : ?format=json
+\item Ketika requestnya seperti itu, maka hasilnya akan muncul
+\item Silahkan jalankan kembali requestnya
+\item Maka hasilnya akan nampak seperti pada gambar \ref{fig:hu2}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hu2.PNG}}
+	\caption{Hasil pengujian 2 untuk error 10 pada contoh kasus 3}
+	\label{fig:hu2}
+\end{figure}
+\end{itemize}
 \end{enumerate}
-\end{itemize}
 
-8. ( ERROR 8 ) : 
-ERROR selanjutnya akan di dapatkan dari codingan yang sama seperti pada ERROR 7. 
-\begin{itemize}
-\item Silahkan jalankan file main.py menggunakan CMD 
-\item Kemudian arahkan pada directory tempat anda menyimpan file tersebut 
-\item Selanjutnya ketikkan perintah berikut : python3 main.py 
-\item Maka akan muncul ERROR lagi seperti ini : 
-%Gambar 19. Error 1 untuk error 8 contoh kasus 3 
-\item Mengapa ERRORnya tetap sama ? 
-\item Padahal di codingan telah di masukkan library pandas, seperti berikut : 
-\item Berarti ada 2 kemungkinan yang harus diperbaiki 
-\item Kemungkinan tersebut ialah : 
-1. Belum melakukan instalasi pandas 
-2. Belum menyesuaikan environtment pada saat eksekusi 
-\item Untuk kemungkinan pertama, tentunya sudah diselesaikan pada tutorial ERROR 7 
-\item Berarti yang harus dibenahi adalah kemungkinan kedua 
-\item Silahkan buka kembali CMD anda 
-\item Kemudian masuk ke Directory tempat anda menyimpan file main.py 
-\item Kemudian masukkan perintah berikut : Env/scripts/activate 
-\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3 
-\item Maka hasilnya akan nampak seperti berikut : 
-%Gambar 20. Aktivasi main.py pada contoh kasus 3 
-\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik 
-\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa. 
-\end{itemize}
- 
-9. ( ERROR 9 ) : 
-ERROR selanjutnya akan di dapatkan dari codingan yang sama seperti pada ERROR 7 
-\begin{itemize}
-\item Silahkan jalankan kembali CMD anda 
-\item Kemudian masuk ke Directory tempat anda menyimpan file main.py 
-\item Kemudian masukkan perintah berikut : Env/scripts/activate 
-\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3 
-\item Maka hasilnya akan nampak seperti berikut : 
-%Gambar 21. Aktivasi main.py 2 pada contoh kasus 3 
-\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik 
-\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa. 
-\item Hasilnya seperti berikut, apabila dieksekusi sesuai endpoint. 
-\item Misalnya endpoint : dataset/<id> 
-%Gambar 22. Hasil pengujian 1 untuk error 9 pada contoh kasus 3 
-\item Kemudian apabila muncul ERROR seperti berikut : 
-%Gambar 23. Error 1 untuk error 9 pada contoh kasus 3 
-\item Maka tindakannya seperti berikut : 
-\item Perhatikan terlebih dahulu request yang diminta 
-\item Request yang diminta yaitu field dengan parameter kolom sign 
-\item Silahkan diperiksa dulu apakah pada file yang ingin di get, kolom tersebut masih ada. 
-\item Apabila tidak ada, maka silahkan masukkan file baru yang ada kolom signnya 
-\item Kemudian silahkan jalankan kembali requestnya 
-\item Maka hasilnya akan nampak seperti berikut : 
-%Gambar 24. Hasil pengujian 2 untuk error 9 pada contoh kasus 3 
-\end{itemize}
+\subsection{Error 3}
+\begin{enumerate}
+\item Silahkan jalankan kembali CMD anda
+\item Kemudian masuk ke Directory tempat anda menyimpan file main.py
+\item Kemudian masukkan perintah berikut : Env/scripts/activate
+\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3
+\item Maka hasilnya akan nampak seperti pada gambar \ref{fig:am4}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/am4.PNG}}
+	\caption{Aktivasi main.py 4 pada contoh kasus 3}
+	\label{fig:am4}
+\end{figure}
 
-10. ( ERROR 10 ) : 
-ERROR selanjutnya akan di dapatkan dari codingan yang sama seperti pada ERROR 7 
-\begin{itemize}
-\item Silahkan jalankan kembali CMD anda 
-\item Kemudian masuk ke Directory tempat anda menyimpan file main.py 
-\item Kemudian masukkan perintah berikut : Env/scripts/activate 
-\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3 
-\item Maka hasilnya akan nampak seperti berikut : 
-%Gambar 25. Aktivasi main.py 3 pada contoh kasus 3 
-\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik 
-\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa. 
-\item Hasilnya seperti berikut, apabila dieksekusi sesuai endpoint. 
-\item Misalnya endpoint : dataset 
-%Gambar 26. Hasil pengujian 1 untuk error 10 pada contoh kasus 3 
-\item Kemudian apabila muncul ERROR seperti berikut: 
-%Gambar 27. Error 1 untuk error 10 pada contoh kasus 3 
-\item Maka tindakannya seperti berikut : 
-\item Perhatikan terlebih dahulu request yang diminta 
-\item Request yang diminta yaitu format 
-\item Silahkan diperiksa kembali apakah pada codingan API nya terdapat request global untuk parameter Format 
-\item Ada, namun harus disertai dengan parameter yang lain 
-\item Seperti ini : ?format=json 
-\item Ketika requestnya seperti itu, maka hasilnya akan muncul 
-\item Silahkan jalankan kembali requestnya 
-\item Maka hasilnya akan nampak seperti berikut :  
-%Gambar 28. Hasil pengujian 2 untuk error 10 pada contoh kasus 3
-\end{itemize}
+\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik
+\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa.
+\item Hasilnya seperti berikut, apabila dieksekusi sesuai endpoint.
+ \item Misalnya endpoint : dataset/<id> seperti pada gambar \ref{fig:hu11}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hu11.PNG}}
+	\caption{Hasil pengujian 1 untuk error 11 pada contoh kasus 3}
+	\label{fig:hu11}
+\end{figure}
 
-11. ( ERROR 11 ) : ERROR selanjutnya akan di dapatkan dari codingan yang sama seperti pada ERROR 7 
+\item Kemudian apabila muncul ERROR seperti pada gambar \ref{fig:err11}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/err11.PNG}}
+	\caption{Error 1 untuk error 11 pada contoh kasus 3}
+	\label{fig:err11}
+\end{figure}
+
+\item Maka tindakannya seperti berikut :
 \begin{itemize}
-\item Silahkan jalankan kembali CMD anda 
-\item Kemudian masuk ke Directory tempat anda menyimpan file main.py 
-\item Kemudian masukkan perintah berikut : Env/scripts/activate 
-\item Maksud dari Code tersebut ialah untuk mengaktifkan scriptnya python3 
-\item Maka hasilnya akan nampak seperti berikut : 
-%Gambar 29. Aktivasi main.py 4 pada contoh kasus 3 
-\item Apabila hasilnya seperti gambar diatas maka filenya telah berjalan dengan baik 
-\item Bisa dilihat, untuk URL APInya sudah muncul jadi silahkan copy dan buktikan menggunakan POSTMAN atau browser biasa. 
-\item Hasilnya seperti berikut, apabila dieksekusi sesuai endpoint. 
-\item Misalnya endpoint : dataset/<id> 
-%Gambar 30. Hasil pengujian 1 untuk error 11 pada contoh kasus 3 
-\item Kemudian apabila muncul ERROR seperti berikut: 
-%Gambar 31. Error 1 untuk error 11 pada contoh kasus 3
-\item Maka tindakannya seperti berikut : 
-\item Perhatikan terlebih dahulu request yang diminta 
-\item Request yang diminta yaitu id 4000 
-\item Silahkan diperiksa kembali apakah pada filenya ada id 4000 yang bisa diubah 
-\item Tidak ada, maka dari itu silahkan coba  diganti dengan id yang terdapat dala file tersebut 
-\item Seperti ini : dataset/2000 
+\item Perhatikan terlebih dahulu request yang diminta
+\item Request yang diminta yaitu id 4000
+\item Silahkan diperiksa kembali apakah pada filenya ada id 4000 yang bisa diubah
+\item Tidak ada, maka dari itu silahkan coba  diganti dengan id yang terdapat dala file tersebut
+\item Seperti ini : dataset/2000
 \item Ketika requestnya seperti itu maka hasilnya akan muncul
-\item Silahkan jalankan kembali requestnya 
-\item Maka hasilnya akan nampak seperti berikut : 
-%Gambar 32. Hasil pengujian 2 untuk error 11 pada contoh kasus 3 
-\item Maka id yang ke POST atau Update yaitu id 2000 dengan isi yang dapat diliat seperti pada gambar diatas.
+\item Silahkan jalankan kembali requestnya
+\item Maka hasilnya akan nampak seperti pada gambar \ref{fig:hu21}.
+\begin{figure}[!htbp]
+	\centerline{\includegraphics[width=0.85\textwidth]{figures/10/hu21.PNG}}
+	\caption{Hasil pengujian 2 untuk error 11 pada contoh kasus 3}
+	\label{fig:hu21}
+\end{figure}
 \end{itemize}
+
+\item Maka id yang ke POST atau Update yaitu id 2000 dengan isi yang dapat diliat seperti pada gambar diatas.
+\end{enumerate}
